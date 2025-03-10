@@ -37,5 +37,28 @@
   .text-text {
       color: #e2e8f0;
   }
+
+  .glass-nav {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+  }
+
+  .nav-pill {
+    @apply px-3 py-2 rounded-lg text-center transition-all duration-300 hover:shadow-lg;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .nav-pill:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px -5px rgba(251, 146, 60, 0.3);
+  }
+
+  .nav-pill:active {
+    transform: translateY(1px);
+  }
 }
 
