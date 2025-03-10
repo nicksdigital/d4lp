@@ -16,7 +16,7 @@ import {
 <template>
   <div class="min-h-screen bg-black/90">
     <!-- Hero Section -->
-    <div class="relative py-24 text-center">
+    <div class="relative pt-[172px] pb-24 text-center"> <!-- Adjusted padding-top to account for both navbars -->
       <div class="container mx-auto px-4">
         <h1 class="text-6xl font-bold text-orange-500">
           D4L Whitepaper
@@ -59,8 +59,7 @@ import {
       </div>
     </div>
 
-    <!-- Spacer for fixed navigation -->
-    <div class="h-[100px]"></div>
+    <!-- Remove the spacer div as we're using padding on the hero section instead -->
 
     <!-- Executive Summary -->
     <section id="executive-summary" class="py-16">
