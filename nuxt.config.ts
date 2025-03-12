@@ -13,5 +13,10 @@ export default defineNuxtConfig({
     extraPlugins: {
       scrollTrigger: true
     }
+  },
+  // Make sure the server listens on all interfaces
+  server: {
+    host: '0.0.0.0',
+    port: 3000
   }
 })
