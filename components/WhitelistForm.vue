@@ -1,5 +1,6 @@
 <template>
-  <form @submit.prevent="handleSubmit" class="glass-effect p-8 rounded-xl max-w-xl mx-auto" v-if="mounted">
+  <ClientOnly>
+    <form @submit.prevent="handleSubmit" class="glass-effect p-8 rounded-xl max-w-xl mx-auto">
     <div class="space-y-6">
       <!-- Wallet Connection Status -->
       <div class="flex items-center justify-between p-4 bg-white/5 rounded-lg">
@@ -78,6 +79,7 @@
       </div>
     </div>
   </form>
+  </ClientOnly>
 </template>
 
 <script setup>
