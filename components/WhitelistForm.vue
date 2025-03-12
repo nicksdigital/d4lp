@@ -81,6 +81,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
+import LoadingSpinner from './LoadingSpinner.vue'
 import { useWeb3 } from '@/composables/useWeb3'
 import { ethers } from 'ethers'
 import D4LWhitelistABI from '@/contracts/abis/D4LWhitelist.json'
