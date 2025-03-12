@@ -10,9 +10,10 @@
           <button 
             @click="connectWallet" 
             v-if="!isConnected"
-            class="px-4 py-2 bg-orange-500 rounded-lg hover:bg-orange-600 transition"
+            :disabled="isConnecting"
+            class="px-4 py-2 bg-orange-500 rounded-lg hover:bg-orange-600 transition disabled:opacity-50"
           >
-            Connect Wallet
+            {{ isConnecting ? 'Connecting...' : 'Connect Wallet' }}
           </button>
         </div>
       </div>
@@ -95,11 +96,15 @@ const formData = ref({
 })
 
 const isLoading = ref(false)
+const isConnecting = ref(false)
 const statusMessage = ref(null)
 
 const CONTRACT_ADDRESS = '0x...' // Add your deployed contract address
 
 const connectWallet = async () => {
+  if (isConnecting.value) return
+  
+  isConnecting.value = true
   try {
     await connect()
   } catch (error) {
@@ -108,6 +113,8 @@ const connectWallet = async () => {
       type: 'error',
       text: 'Failed to connect wallet. Please try again.'
     }
+  } finally {
+    isConnecting.value = false
   }
 }
 
