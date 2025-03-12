@@ -30,11 +30,21 @@
   const updateCountdown = () => {
     const now = new Date().getTime()
     const timeLeft = auctionDate - now
+    
+    // Force recalculate correct time difference
     if (timeLeft > 0) {
-      countdown.value.days = String(Math.floor(timeLeft / (1000 * 60 * 60 * 24))).padStart(2, "0")
-      countdown.value.hours = String(Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, "0")
-      countdown.value.minutes = String(Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, "0")
-      countdown.value.seconds = String(Math.floor((timeLeft % (1000 * 60)) / 1000)).padStart(2, "0")
+      // Calculate days, ensuring we're getting the current difference
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24))
+      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60))
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000)
+      
+      countdown.value.days = String(days).padStart(2, "0")
+      countdown.value.hours = String(hours).padStart(2, "0")
+      countdown.value.minutes = String(minutes).padStart(2, "0")
+      countdown.value.seconds = String(seconds).padStart(2, "0")
+      
+      console.log("Countdown updated:", days, "days remaining until", new Date(auctionDate).toLocaleDateString())
     }
   }
   
