@@ -5,11 +5,7 @@
     
     <!-- Main Content with smooth page transitions -->
     <main class="flex-grow mt-[72px]"> <!-- Fixed height of nav -->
-      <transition name="page" mode="out-in">
-        <div :key="$route.fullPath">
-          <slot />
-        </div>
-      </transition>
+      <slot />
     </main>
 
     <!-- Floating UI for Auction Info -->
