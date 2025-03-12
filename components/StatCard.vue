@@ -10,6 +10,9 @@
 defineProps({
   number: String,
   label: String,
-  icon: Object
+  icon: {
+    type: [Object, String],
+    required: true
+  }
 })
 </script>

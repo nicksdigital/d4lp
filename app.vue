@@ -2,7 +2,7 @@
  <template>
   <div>
     <NuxtLayout>
-      <NuxtPage />
+      <NuxtPage :key="$route.fullPath" />
       <ScrollToTop />
     </NuxtLayout>
   </div>
