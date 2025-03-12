@@ -1,3 +1,4 @@
+
 import type { Config } from 'tailwindcss'
 
 export default {
@@ -14,9 +15,11 @@ export default {
       colors: {
         'background': '#0f172a',
         'primary': '#6d28d9',
-        'secondary': '#10b981',
-        'text': '#e2e8f0',  // Changed from textColor to text
-        'accent': '#f59e0b'
+        'secondary': '#4c1d95',
+        'text': '#e2e8f0',
+        'accent': '#8b5cf6',
+        'highlight': '#7c3aed',
+        'muted': '#64748b'
       },
       animation: {
         'pulse-slow': 'pulse 4s infinite'

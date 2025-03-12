@@ -22,12 +22,12 @@
     <!-- ✨ Main Headline -->
     <div class="relative z-10 max-w-3xl mt-12">
       <h1 class="text-5xl font-bold text-white">
-        Welcome to <span class="text-orange-500">D4L</span>
+        Welcome to <span class="text-violet-500">D4L</span>
       </h1>
       <p class="mt-4 text-lg text-gray-300 leading-relaxed">
-        The most innovative <span class="font-semibold text-orange-400">DeFi launchpad</span>, powered by  
-        <span class="font-semibold text-orange-400">HydraCurve™ AMM</span>, <span class="font-semibold text-orange-400">AI-driven risk management</span>,  
-        and <span class="font-semibold text-orange-400">NFT-backed liquidity.</span>
+        The most innovative <span class="font-semibold text-violet-400">DeFi launchpad</span>, powered by  
+        <span class="font-semibold text-violet-400">HydraCurve™ AMM</span>, <span class="font-semibold text-violet-400">AI-driven risk management</span>,  
+        and <span class="font-semibold text-violet-400">NFT-backed liquidity.</span>
       </p>
 
       <!-- 📢 Call-to-Action Buttons -->
@@ -35,7 +35,7 @@
         <!-- CTA 1: Get Whitelisted -->
         <NuxtLink 
           to="/whitelist"
-          class="px-6 py-3 bg-gradient-to-r from-purple-500 to-orange-500 hover:scale-105 text-white font-semibold rounded-lg shadow-lg transition flex items-center gap-2"
+          class="px-6 py-3 bg-gradient-to-r from-violet-600 to-purple-600 hover:scale-105 text-white font-semibold rounded-lg shadow-lg transition flex items-center gap-2"
         >
           <UserPlus class="w-6 h-6" /> BE A VIP – Get Whitelisted
         </NuxtLink>

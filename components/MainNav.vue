@@ -22,7 +22,7 @@ const navItems = [
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
       <!-- LOGO -->
       <NuxtLink to="#top" class="text-white text-xl font-bold flex items-center space-x-2 hover:scale-105 transition-transform duration-300">
-        <Rocket class="w-6 h-6 text-orange-400" />
+        <Rocket class="w-6 h-6 text-violet-400" />
         <span>D4L</span>
       </NuxtLink>
 
@@ -34,15 +34,15 @@ const navItems = [
           :to="item.to" 
           class="nav-link group flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-300 hover:bg-white/10"
         >
-          <component :is="item.icon" class="w-5 h-5 text-orange-400 group-hover:scale-110 transition-transform duration-300" />
-          <span class="group-hover:text-orange-400 transition-colors duration-300">{{ item.text }}</span>
+          <component :is="item.icon" class="w-5 h-5 text-violet-400 group-hover:scale-110 transition-transform duration-300" />
+          <span class="group-hover:text-violet-400 transition-colors duration-300">{{ item.text }}</span>
         </NuxtLink>
       </div>
 
       <!-- LOGIN BUTTON -->
       <NuxtLink
         to="#login"
-        class="nav-button bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-lg flex items-center space-x-2 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-orange-500/20"
+        class="nav-button bg-violet-600 hover:bg-violet-700 text-white px-6 py-2 rounded-lg flex items-center space-x-2 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-violet-500/20"
       >
         <LogIn class="w-5 h-5" />
         <span>Login</span>
