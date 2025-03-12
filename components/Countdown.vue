@@ -25,13 +25,14 @@
     seconds: "00"
   })
   
-  const auctionDate = new Date("2025-03-25T00:00:00Z").getTime()
+  // Explicitly set to March 25, 2025
+const auctionDate = new Date(2025, 2, 25, 0, 0, 0, 0).getTime()
   
   const updateCountdown = () => {
     const now = new Date().getTime()
     const timeLeft = auctionDate - now
     
-    // Force recalculate correct time difference
+    // Clear any cached values by forcing a fresh calculation
     if (timeLeft > 0) {
       // Calculate days, ensuring we're getting the current difference
       const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24))
@@ -39,12 +40,13 @@
       const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60))
       const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000)
       
+      // Update with fresh values
       countdown.value.days = String(days).padStart(2, "0")
       countdown.value.hours = String(hours).padStart(2, "0")
       countdown.value.minutes = String(minutes).padStart(2, "0")
       countdown.value.seconds = String(seconds).padStart(2, "0")
       
-      console.log("Countdown updated:", days, "days remaining until", new Date(auctionDate).toLocaleDateString())
+      console.log("Countdown updated:", days, "days remaining until March 25, 2025")
     }
   }
   
