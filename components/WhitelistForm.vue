@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="handleSubmit" class="glass-effect p-8 rounded-xl max-w-xl mx-auto">
+  <form @submit.prevent="handleSubmit" class="glass-effect p-8 rounded-xl max-w-xl mx-auto" v-if="mounted">
     <div class="space-y-6">
       <!-- Wallet Connection Status -->
       <div class="flex items-center justify-between p-4 bg-white/5 rounded-lg">
@@ -98,6 +98,11 @@ const formData = ref({
 const isLoading = ref(false)
 const isConnecting = ref(false)
 const statusMessage = ref(null)
+const mounted = ref(false)
+
+onMounted(() => {
+  mounted.value = true
+})
 
 const CONTRACT_ADDRESS = '0x...' // Add your deployed contract address
 
