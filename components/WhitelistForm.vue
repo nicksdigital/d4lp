@@ -112,6 +112,9 @@ const connectWallet = async () => {
   isConnecting.value = true
   try {
     await connect()
+    // Force a small delay to ensure wallet state is updated
+    await new Promise(resolve => setTimeout(resolve, 500))
+    
     if (!isConnected.value) {
       throw new Error('Connection failed')
     }
@@ -119,12 +122,19 @@ const connectWallet = async () => {
     console.error('Failed to connect wallet:', error)
     statusMessage.value = {
       type: 'error',
-      text: 'Failed to connect wallet. Please try again.'
+      text: error.message || 'Failed to connect wallet. Please try again.'
     }
   } finally {
     isConnecting.value = false
   }
 }
+
+// Watch for connection changes
+watch(isConnected, (newVal) => {
+  if (newVal) {
+    isConnecting.value = false
+  }
+})
 
 const handleSubmit = async () => {
   if (!isConnected.value) {
