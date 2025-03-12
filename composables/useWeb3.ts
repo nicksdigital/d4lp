@@ -6,8 +6,33 @@ export function useWeb3() {
   const signer = ref<ethers.JsonRpcSigner | null>(null)
   const address = ref<string | null>(null)
   const chainId = ref<number | null>(null)
+  const targetChainId = 84532 // Base Sepolia
 
   const isConnected = computed(() => !!address.value)
+  const isCorrectNetwork = computed(() => chainId.value === targetChainId)
+
+  const switchNetwork = async () => {
+    if (!window.ethereum) return
+    try {
+      await window.ethereum.request({
+        method: 'wallet_switchEthereumChain',
+        params: [{ chainId: '0x14A34' }], // 84532 in hex
+      })
+    } catch (error: any) {
+      if (error.code === 4902) {
+        await window.ethereum.request({
+          method: 'wallet_addEthereumChain',
+          params: [{
+            chainId: '0x14A34',
+            chainName: 'Base Sepolia',
+            nativeCurrency: { name: 'ETH', symbol: 'ETH', decimals: 18 },
+            rpcUrls: ['https://sepolia.base.org'],
+            blockExplorerUrls: ['https://sepolia.basescan.org']
+          }]
+        })
+      }
+    }
+  }
 
   const connect = async () => {
     if (!window.ethereum) {
