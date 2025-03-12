@@ -2,12 +2,18 @@
 import { ref } from "vue";
 import { Home, Rocket, Layers, FileText, Users, LogIn } from "lucide-vue-next"; // ✅ Import Lucide Icons
 
+const menuOpen = ref(false);
+
+const toggleMenu = () => {
+  menuOpen.value = !menuOpen.value;
+};
+
 const navItems = [
-  { to: "#home", icon: Home, text: "Home" },
-  { to: "#auction", icon: Rocket, text: "Auction" },
-  { to: "#features", icon: Layers, text: "Features" },
-  { to: "#whitepaper", icon: FileText, text: "Whitepaper" },
-  { to: "#community", icon: Users, text: "Community" },
+  { to: "/", icon: Home, text: "Home" },
+  { to: "/#auction", icon: Rocket, text: "Auction" },
+  { to: "/#features", icon: Layers, text: "Features" },
+  { to: "/whitepaper", icon: FileText, text: "Whitepaper" },
+  { to: "/#community", icon: Users, text: "Community" },
 ];
 </script>
 
@@ -50,27 +56,27 @@ const navItems = [
 
     <!-- MOBILE MENU -->
     <div v-if="menuOpen" class="absolute top-full left-0 w-full bg-black/80 backdrop-blur-md text-white flex flex-col py-4">
-      <NuxtLink to="#" class="py-2 px-6 flex items-center space-x-2 hover:bg-orange-500/20 transition">
+      <NuxtLink to="/" class="py-2 px-6 flex items-center space-x-2 hover:bg-orange-500/20 transition">
         <Home class="w-5 h-5" />
         <span>Home</span>
       </NuxtLink>
 
-      <NuxtLink to="#auction" class="py-2 px-6 flex items-center space-x-2 hover:bg-orange-500/20 transition">
+      <NuxtLink to="/#auction" class="py-2 px-6 flex items-center space-x-2 hover:bg-orange-500/20 transition">
         <Rocket class="w-5 h-5" />
         <span>Auction</span>
       </NuxtLink>
 
-      <NuxtLink to="#features" class="py-2 px-6 flex items-center space-x-2 hover:bg-orange-500/20 transition">
+      <NuxtLink to="/#features" class="py-2 px-6 flex items-center space-x-2 hover:bg-orange-500/20 transition">
         <Layers class="w-5 h-5" />
         <span>Features</span>
       </NuxtLink>
 
-      <NuxtLink to="#whitepaper" class="py-2 px-6 flex items-center space-x-2 hover:bg-orange-500/20 transition">
+      <NuxtLink to="/whitepaper" class="py-2 px-6 flex items-center space-x-2 hover:bg-orange-500/20 transition">
         <FileText class="w-5 h-5" />
         <span>Whitepaper</span>
       </NuxtLink>
 
-      <NuxtLink to="#community" class="py-2 px-6 flex items-center space-x-2 hover:bg-orange-500/20 transition">
+      <NuxtLink to="/#community" class="py-2 px-6 flex items-center space-x-2 hover:bg-orange-500/20 transition">
         <Users class="w-5 h-5" />
         <span>Community</span>
       </NuxtLink>

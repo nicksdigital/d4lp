@@ -51,7 +51,7 @@
           <FeatureCard
             title="Cross-Chain Bridge"
             description="Seamless asset transfer across multiple blockchains"
-            icon="Bridge"
+            icon="Link2"
           />
         </div>
       </template>
@@ -108,7 +108,7 @@
 </template>
 
 <script setup>
-import { CircleDollarSign, Users, Activity, Headphones, TrendingUp, Image, Brain, Bridge } from 'lucide-vue-next'
+import { CircleDollarSign, Users, Activity, Headphones, TrendingUp, Image, Brain, Link2 } from 'lucide-vue-next'
 import HeroSection from '@/components/HeroSection.vue'
 import AboutSection from '@/components/AboutSection.vue'
 import AuctionSection from '@/components/AuctionSection.vue'
