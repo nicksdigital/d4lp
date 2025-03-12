@@ -18,7 +18,7 @@ import {
     <!-- Hero Section -->
     <div class="relative pt-[172px] pb-24 text-center"> <!-- Adjusted padding-top to account for both navbars -->
       <div class="container mx-auto px-4">
-        <h1 class="text-6xl font-bold text-orange-500">
+        <h1 class="text-6xl font-bold text-violet-600">
           D4L Whitepaper
         </h1>
         <p class="text-xl text-gray-300 mt-4 max-w-2xl mx-auto">
@@ -27,16 +27,17 @@ import {
         
         <a href="/docs/D4L-Whitepaper.pdf" 
            target="_blank"
-           class="mt-8 inline-block px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-lg shadow-lg transition transform hover:scale-105">
+           class="mt-8 inline-block px-8 py-4 bg-gradient-to-r from-violet-700 to-violet-600 hover:from-violet-600 hover:to-violet-500 
+                  text-white rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-violet-500/25">
           Download Full Whitepaper
         </a>
       </div>
     </div>
 
     <!-- Fixed Quick Navigation -->
-    <div class="fixed top-[72px] left-0 right-0 z-40 bg-black/90 backdrop-blur-lg border-b border-white/10">
-      <div class="container mx-auto px-4 py-4">
-        <div class="glass-card p-4">
+    <div class="fixed top-[72px] left-0 right-0 z-40 bg-black/95 backdrop-blur-xl border-b border-violet-900/30 transition-all duration-300">
+      <div class="container mx-auto px-4 py-3">
+        <div class="wp-nav-glass p-3 rounded-xl bg-gradient-to-br from-violet-900/20 to-violet-800/10">
           <div class="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-9 gap-2">
             <a v-for="section in [
               'executive-summary', 
@@ -51,8 +52,14 @@ import {
             ]" 
                :key="section"
                :href="`#${section}`"
-               class="glass-inner-card px-3 py-2 text-center hover:bg-white/10 transition text-sm">
-              <span class="text-orange-400">{{ section.replace('-', ' ').toUpperCase() }}</span>
+               class="wp-nav-pill relative group">
+              <div class="absolute inset-0 bg-gradient-to-r from-violet-700/20 to-violet-600/20 transform transition-all duration-300 
+                          group-hover:scale-100 scale-x-0 origin-left rounded-lg opacity-0 group-hover:opacity-100"></div>
+              <div class="absolute inset-0 bg-white/[0.02] rounded-lg"></div>
+              <span class="relative z-10 text-violet-200 group-hover:text-violet-100 transition-all duration-300 text-sm font-medium 
+                           group-hover:translate-y-[-1px] inline-block">
+                {{ section.replace('-', ' ').toUpperCase() }}
+              </span>
             </a>
           </div>
         </div>
@@ -379,27 +386,58 @@ import {
 </template>
 
 <style scoped>
+.wp-nav-glass {
+  box-shadow: 0 4px 30px rgba(109, 40, 217, 0.1);
+  border: 1px solid rgba(109, 40, 217, 0.1);
+  transition: all 0.3s ease;
+}
+
+.wp-nav-pill {
+  @apply px-3 py-2 rounded-lg text-center transition-all duration-300;
+  background: rgba(109, 40, 217, 0.03);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(109, 40, 217, 0.1);
+  overflow: hidden;
+}
+
+.wp-nav-pill:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px -5px rgba(109, 40, 217, 0.2);
+  border-color: rgba(109, 40, 217, 0.2);
+}
+
+.wp-nav-pill:active {
+  transform: translateY(1px);
+}
+
+/* Update section headers */
+section h2 {
+  @apply text-4xl font-bold text-violet-600;
+}
+
 .glass-card {
-  @apply backdrop-blur-xl bg-white/5 border border-white/10 rounded-xl transition duration-300 hover:bg-white/10;
+  @apply backdrop-blur-xl bg-white/5 border border-violet-900/20 rounded-xl transition duration-300 hover:bg-white/10;
 }
 
 .glass-inner-card {
-  @apply bg-white/5 rounded-lg border border-white/10 transition duration-300;
-}
-
-.prose {
-  @apply text-gray-300;
+  @apply bg-violet-900/10 rounded-lg border border-violet-900/20 transition duration-300;
 }
 
 .prose strong {
-  @apply text-orange-400;
+  @apply text-violet-400;
 }
 
 .prose h3, .prose h4 {
-  @apply text-orange-400;
+  @apply text-violet-400;
 }
 
-section {
-  @apply scroll-mt-24;
+/* Update icons color */
+[class^="lucide-"] {
+  @apply text-violet-600;
+}
+
+/* Keep accent elements in orange */
+.accent-element {
+  @apply text-orange-500;
 }
 </style>
