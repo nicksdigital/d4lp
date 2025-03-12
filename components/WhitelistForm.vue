@@ -102,11 +102,14 @@ const statusMessage = ref(null)
 const CONTRACT_ADDRESS = '0x...' // Add your deployed contract address
 
 const connectWallet = async () => {
-  if (isConnecting.value) return
+  if (isConnecting.value || isConnected.value) return
   
   isConnecting.value = true
   try {
     await connect()
+    if (!isConnected.value) {
+      throw new Error('Connection failed')
+    }
   } catch (error) {
     console.error('Failed to connect wallet:', error)
     statusMessage.value = {
