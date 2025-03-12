@@ -88,17 +88,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Future Vision -->
-      <div class="mt-48 text-center relative z-20">
-        <div class="glass-card p-8 max-w-2xl mx-auto relative bg-black/40">
-          <h3 class="text-2xl font-bold text-orange-400 mb-4">Future Vision</h3>
-          <p class="text-gray-300">
-            Beyond 2024, we're committed to expanding the D4L ecosystem through innovative DeFi products, 
-            enhanced cross-chain capabilities, and deeper integration with traditional finance.
-          </p>
-        </div>
-      </div>
     </div>
   </section>
 </template>
