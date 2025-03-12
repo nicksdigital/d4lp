@@ -63,7 +63,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, nextTick } from 'vue'
 import { UserPlus, FileText } from 'lucide-vue-next'
 
 // Countdown Timer
@@ -98,26 +98,32 @@ onMounted(() => {
   updateCountdown()
   setInterval(updateCountdown, 1000)
 
-  // 🦝 Smooth Fade-in Animation
-  $gsap.fromTo(raccoon.value, 
-    { opacity: 0, scale: 0.8, y: -30 }, 
-    { opacity: 1, scale: 1, y: 0, duration: 1.8, ease: "elastic.out(1, 0.5)" }
-  )
+  nextTick(() => {
+    if (raccoon.value && raccoonContainer.value) {
+      // 🦝 Smooth Fade-in Animation
+      $gsap.fromTo(raccoon.value, 
+        { opacity: 0, scale: 0.8, y: -30 }, 
+        { opacity: 1, scale: 1, y: 0, duration: 1.8, ease: "elastic.out(1, 0.5)" }
+      )
 
-  // 🎭 Subtle Raccoon Head Tilting
-  $gsap.to(raccoon.value, {
-    rotation: 2 + Math.random() * 3, // Random slight tilts
-    duration: 3,
-    repeat: -1,
-    yoyo: true,
-    ease: "sine.inOut",
-    delay: Math.random() * 2, // Small delay to look organic
-  });
+      // 🎭 Subtle Raccoon Head Tilting
+      $gsap.to(raccoon.value, {
+        rotation: 2 + Math.random() * 3,
+        duration: 3,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+        delay: Math.random() * 2,
+      });
 
-  // 📜 Scroll Effect for Smooth Floating
-  window.addEventListener("scroll", () => {
-    let scrollY = window.scrollY;
-    raccoonContainer.value.style.transform = `translateY(${scrollY * 0.1}px)`; 
+      // 📜 Scroll Effect for Smooth Floating
+      window.addEventListener("scroll", () => {
+        if (raccoonContainer.value) {
+          let scrollY = window.scrollY;
+          raccoonContainer.value.style.transform = `translateY(${scrollY * 0.1}px)`;
+        }
+      })
+    }
   })
 })
 </script>
