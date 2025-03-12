@@ -6,7 +6,9 @@
     <!-- Main Content with smooth page transitions -->
     <main class="flex-grow mt-[72px]"> <!-- Fixed height of nav -->
       <transition name="page" mode="out-in">
-        <slot />
+        <div :key="$route.fullPath">
+          <slot />
+        </div>
       </transition>
     </main>
 
