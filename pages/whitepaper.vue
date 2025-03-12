@@ -71,11 +71,11 @@ import {
       <!-- Remove the spacer div as we're using padding on the hero section instead -->
 
       <!-- Executive Summary -->
-      <section id="executive-summary" class="py-16">
+      <section id="executive-summary" class="py-16 relative backdrop-blur-xl bg-black/30">
         <div class="container mx-auto px-4">
           <div class="flex items-center gap-4 mb-8">
-            <Rocket class="w-8 h-8 text-orange-500" />
-            <h2 class="text-4xl font-bold text-orange-500">1. Executive Summary</h2>
+            <Rocket class="w-8 h-8 text-violet-500" />
+            <h2 class="text-4xl font-bold text-violet-500">1. Executive Summary</h2>
           </div>
           <div class="prose prose-lg prose-invert max-w-none glass-card p-8">
             <p>Welcome to D4L: Ride the D4L Wave: Risk It, Build It, Bank It</p>
@@ -86,17 +86,17 @@ import {
       </section>
 
       <!-- Platform Overview -->
-      <section id="platform-overview" class="py-16">
+      <section id="platform-overview" class="py-16 relative backdrop-blur-xl bg-black/30">
         <div class="container mx-auto px-4">
           <div class="flex items-center gap-4 mb-8">
-            <Layout class="w-8 h-8 text-orange-500" />
-            <h2 class="text-4xl font-bold text-orange-500">2. Platform Overview</h2>
+            <Layout class="w-8 h-8 text-violet-500" />
+            <h2 class="text-4xl font-bold text-violet-500">2. Platform Overview</h2>
           </div>
           <div class="grid md:grid-cols-2 gap-8">
             <div class="glass-card p-8">
               <div class="flex items-center gap-3 mb-4">
-                <Lightbulb class="w-6 h-6 text-orange-400" />
-                <h4 class="text-xl font-bold text-orange-300">Meme Coin Launchpad</h4>
+                <Lightbulb class="w-6 h-6 text-violet-300" />
+                <h4 class="text-xl font-bold text-violet-300">Meme Coin Launchpad</h4>
               </div>
               <div class="space-y-4">
                 <p><strong>What:</strong> Spin up your own meme coin with D4L's creator tools—customize it, secure it, launch it. Our verification system sniffs out scams, anti-bot features, plus no rug pulls to ruin the party.</p>
@@ -106,8 +106,8 @@ import {
             </div>
             <div class="glass-card p-8">
               <div class="flex items-center gap-3 mb-4">
-                <TrendingUp class="w-6 h-6 text-orange-400" />
-                <h4 class="text-xl font-bold text-orange-300">DEX: Powered by HydraCurve</h4>
+                <TrendingUp class="w-6 h-6 text-violet-300" />
+                <h4 class="text-xl font-bold text-violet-300">DEX: Powered by HydraCurve</h4>
               </div>
               <div class="space-y-4">
                 <p><strong>What:</strong> Trade cross-chain with low slippage, backed by a 30% D4L liquidity pool that keeps the gears turning. Secure trading with built in liquidity, no more sketchy swaps—D4L's DEX is built for speed and stability.</p>
@@ -119,18 +119,18 @@ import {
       </section>
 
       <!-- Technical Architecture -->
-      <section id="technical" class="py-16">
+      <section id="technical" class="py-16 relative backdrop-blur-xl bg-black/30">
         <div class="container mx-auto px-4">
           <div class="flex items-center gap-4 mb-8">
-            <Code2 class="w-8 h-8 text-orange-500" />
-            <h2 class="text-4xl font-bold text-orange-500">3. Technical Architecture</h2>
+            <Code2 class="w-8 h-8 text-violet-500" />
+            <h2 class="text-4xl font-bold text-violet-500">3. Technical Architecture</h2>
           </div>
           <div class="glass-card p-8">
             <div class="grid md:grid-cols-2 gap-8">
               <div>
                 <div class="flex items-center gap-3 mb-4">
-                  <Shield class="w-6 h-6 text-orange-400" />
-                  <h4 class="text-xl font-bold text-orange-300">Core Infrastructure</h4>
+                  <Shield class="w-6 h-6 text-violet-300" />
+                  <h4 class="text-xl font-bold text-violet-300">Core Infrastructure</h4>
                 </div>
                 <div class="space-y-4">
                   <p><strong>BlockChain:</strong> D4L is engineered on Base, an Ethereum Layer-2 scaling solution, harnessing the ERC-20 standard for the $D4L token.</p>
@@ -139,8 +139,8 @@ import {
               </div>
               <div>
                 <div class="flex items-center gap-3 mb-4">
-                  <Target class="w-6 h-6 text-orange-400" />
-                  <h4 class="text-xl font-bold text-orange-300">HydraCurve Technology</h4>
+                  <Target class="w-6 h-6 text-violet-300" />
+                  <h4 class="text-xl font-bold text-violet-300">HydraCurve Technology</h4>
                 </div>
                 <p><strong>HydraCurve:</strong> The star, a next-gen pricing engine powering the DEX. The HydraCurve is an advanced, dynamic pricing mechanism designed to optimize liquidity utilization in AMMs by continuously adapting to market conditions.</p>
               </div>
@@ -150,41 +150,41 @@ import {
       </section>
 
       <!-- Tokenomics -->
-      <section id="tokenomics" class="py-16">
+      <section id="tokenomics" class="py-16 relative backdrop-blur-xl bg-black/30">
         <div class="container mx-auto px-4">
           <div class="flex items-center gap-4 mb-8">
-            <Coins class="w-8 h-8 text-orange-500" />
-            <h2 class="text-4xl font-bold text-orange-500">4. Tokenomics & Allocation</h2>
+            <Coins class="w-8 h-8 text-violet-500" />
+            <h2 class="text-4xl font-bold text-violet-500">4. Tokenomics & Allocation</h2>
           </div>
           <div class="glass-card p-8">
             <p class="text-xl mb-6">D4L Token: 1 Billion total supply—your golden ticket to the D4L arena.</p>
             <div class="grid md:grid-cols-2 gap-8">
               <div class="glass-inner-card p-6">
-                <h4 class="text-xl font-bold text-orange-300 mb-4">Token Allocation</h4>
+                <h4 class="text-xl font-bold text-violet-300 mb-4">Token Allocation</h4>
                 <ul class="space-y-3">
                   <li class="flex items-center justify-between">
                     <span>DEX Liquidity Pool</span>
-                    <span class="text-orange-400">30%</span>
+                    <span class="text-violet-300">30%</span>
                   </li>
                   <li class="flex items-center justify-between">
                     <span>Community/Ecosystem</span>
-                    <span class="text-orange-400">25%</span>
+                    <span class="text-violet-300">25%</span>
                   </li>
                   <li class="flex items-center justify-between">
                     <span>Team</span>
-                    <span class="text-orange-400">20%</span>
+                    <span class="text-violet-300">20%</span>
                   </li>
                   <li class="flex items-center justify-between">
                     <span>D4L Treasury</span>
-                    <span class="text-orange-400">10%</span>
+                    <span class="text-violet-300">10%</span>
                   </li>
                   <li class="flex items-center justify-between">
                     <span>Marketing</span>
-                    <span class="text-orange-400">10%</span>
+                    <span class="text-violet-300">10%</span>
                   </li>
                   <li class="flex items-center justify-between">
                     <span>CEX Liquidity</span>
-                    <span class="text-orange-400">5%</span>
+                    <span class="text-violet-300">5%</span>
                   </li>
                 </ul>
               </div>
@@ -194,16 +194,16 @@ import {
       </section>
 
       <!-- Roadmap -->
-      <section id="roadmap" class="py-16">
+      <section id="roadmap" class="py-16 relative backdrop-blur-xl bg-black/30">
         <div class="container mx-auto px-4">
           <div class="flex items-center gap-4 mb-8">
-            <Calendar class="w-8 h-8 text-orange-500" />
-            <h2 class="text-4xl font-bold text-orange-500">5. Roadmap</h2>
+            <Calendar class="w-8 h-8 text-violet-500" />
+            <h2 class="text-4xl font-bold text-violet-500">5. Roadmap</h2>
           </div>
           <div class="glass-card p-8">
             <div class="space-y-8">
               <div class="glass-inner-card p-6">
-                <h4 class="text-xl font-bold text-orange-300 mb-4">Q2 2025</h4>
+                <h4 class="text-xl font-bold text-violet-300 mb-4">Q2 2025</h4>
                 <ul class="space-y-2">
                   <li>• D4L whitepaper release and vision unveiling</li>
                   <li>• Pre-sale funding initiation</li>
@@ -221,18 +221,18 @@ import {
       </section>
 
       <!-- Governance -->
-      <section id="governance" class="py-16">
+      <section id="governance" class="py-16 relative backdrop-blur-xl bg-black/30">
         <div class="container mx-auto px-4">
           <div class="flex items-center gap-4 mb-8">
-            <Users class="w-8 h-8 text-orange-500" />
-            <h2 class="text-4xl font-bold text-orange-500">6. Governance</h2>
+            <Users class="w-8 h-8 text-violet-500" />
+            <h2 class="text-4xl font-bold text-violet-500">6. Governance</h2>
           </div>
           <div class="glass-card p-8">
             <div class="grid md:grid-cols-2 gap-8">
               <div>
                 <div class="flex items-center gap-3 mb-4">
-                  <Target class="w-6 h-6 text-orange-400" />
-                  <h4 class="text-xl font-bold text-orange-300">DAO Structure</h4>
+                  <Target class="w-6 h-6 text-violet-300" />
+                  <h4 class="text-xl font-bold text-violet-300">DAO Structure</h4>
                 </div>
                 <div class="space-y-4">
                   <p>D4L operates as a Decentralized Autonomous Organization (DAO), where token holders have direct influence over the platform's evolution.</p>
@@ -246,8 +246,8 @@ import {
               </div>
               <div>
                 <div class="flex items-center gap-3 mb-4">
-                  <Shield class="w-6 h-6 text-orange-400" />
-                  <h4 class="text-xl font-bold text-orange-300">Voting Mechanisms</h4>
+                  <Shield class="w-6 h-6 text-violet-300" />
+                  <h4 class="text-xl font-bold text-violet-300">Voting Mechanisms</h4>
                 </div>
                 <div class="space-y-4">
                   <p><strong>Key Voting Areas:</strong></p>
@@ -266,16 +266,16 @@ import {
       </section>
 
       <!-- Risk Management -->
-      <section id="risk" class="py-16">
+      <section id="risk" class="py-16 relative backdrop-blur-xl bg-black/30">
         <div class="container mx-auto px-4">
           <div class="flex items-center gap-4 mb-8">
-            <Shield class="w-8 h-8 text-orange-500" />
-            <h2 class="text-4xl font-bold text-orange-500">7. Risk Management</h2>
+            <Shield class="w-8 h-8 text-violet-500" />
+            <h2 class="text-4xl font-bold text-violet-500">7. Risk Management</h2>
           </div>
           <div class="glass-card p-8">
             <div class="grid md:grid-cols-2 gap-8">
               <div class="glass-inner-card p-6">
-                <h4 class="text-xl font-bold text-orange-300 mb-4">Security Measures</h4>
+                <h4 class="text-xl font-bold text-violet-300 mb-4">Security Measures</h4>
                 <ul class="space-y-3">
                   <li>• Multi-layered smart contract security</li>
                   <li>• Regular third-party audits</li>
@@ -285,7 +285,7 @@ import {
                 </ul>
               </div>
               <div class="glass-inner-card p-6">
-                <h4 class="text-xl font-bold text-orange-300 mb-4">Insurance Protocol</h4>
+                <h4 class="text-xl font-bold text-violet-300 mb-4">Insurance Protocol</h4>
                 <ul class="space-y-3">
                   <li>• Coverage for smart contract risks</li>
                   <li>• Liquidity protection</li>
@@ -299,19 +299,19 @@ import {
       </section>
 
       <!-- Community & Marketing -->
-      <section id="community" class="py-16">
+      <section id="community" class="py-16 relative backdrop-blur-xl bg-black/30">
         <div class="container mx-auto px-4">
           <div class="flex items-center gap-4 mb-8">
-            <Users class="w-8 h-8 text-orange-500" />
-            <h2 class="text-4xl font-bold text-orange-500">8. Community & Marketing</h2>
+            <Users class="w-8 h-8 text-violet-500" />
+            <h2 class="text-4xl font-bold text-violet-500">8. Community & Marketing</h2>
           </div>
           <div class="glass-card p-8">
             <div class="space-y-8">
               <div class="glass-inner-card p-6">
-                <h4 class="text-xl font-bold text-orange-300 mb-4">Community Building</h4>
+                <h4 class="text-xl font-bold text-violet-300 mb-4">Community Building</h4>
                 <div class="grid md:grid-cols-2 gap-6">
                   <div>
-                    <p class="font-bold text-orange-400 mb-2">Social Engagement</p>
+                    <p class="font-bold text-violet-300 mb-2">Social Engagement</p>
                     <ul class="space-y-2">
                       <li>• Discord community hub</li>
                       <li>• Twitter/X presence</li>
@@ -320,7 +320,7 @@ import {
                     </ul>
                   </div>
                   <div>
-                    <p class="font-bold text-orange-400 mb-2">Educational Initiatives</p>
+                    <p class="font-bold text-violet-300 mb-2">Educational Initiatives</p>
                     <ul class="space-y-2">
                       <li>• D4L Academy</li>
                       <li>• Trading workshops</li>
@@ -336,18 +336,18 @@ import {
       </section>
 
       <!-- Legal & Compliance -->
-      <section id="legal" class="py-16">
+      <section id="legal" class="py-16 relative backdrop-blur-xl bg-black/30">
         <div class="container mx-auto px-4">
           <div class="flex items-center gap-4 mb-8">
-            <Shield class="w-8 h-8 text-orange-500" />
-            <h2 class="text-4xl font-bold text-orange-500">9. Legal & Compliance</h2>
+            <Shield class="w-8 h-8 text-violet-500" />
+            <h2 class="text-4xl font-bold text-violet-500">9. Legal & Compliance</h2>
           </div>
           <div class="glass-card p-8">
             <div class="grid md:grid-cols-2 gap-8">
               <div>
                 <div class="flex items-center gap-3 mb-4">
-                  <Target class="w-6 h-6 text-orange-400" />
-                  <h4 class="text-xl font-bold text-orange-300">Regulatory Framework</h4>
+                  <Target class="w-6 h-6 text-violet-300" />
+                  <h4 class="text-xl font-bold text-violet-300">Regulatory Framework</h4>
                 </div>
                 <div class="space-y-4">
                   <p>D4L is committed to operating within regulatory guidelines while maintaining decentralization principles:</p>
@@ -361,8 +361,8 @@ import {
               </div>
               <div>
                 <div class="flex items-center gap-3 mb-4">
-                  <Shield class="w-6 h-6 text-orange-400" />
-                  <h4 class="text-xl font-bold text-orange-300">Jurisdictional Approach</h4>
+                  <Shield class="w-6 h-6 text-violet-300" />
+                  <h4 class="text-xl font-bold text-violet-300">Jurisdictional Approach</h4>
                 </div>
                 <div class="space-y-4">
                   <ul class="space-y-2">
@@ -414,15 +414,15 @@ import {
 
 /* Update section headers */
 section h2 {
-  @apply text-4xl font-bold text-violet-600;
+  @apply text-4xl font-bold text-violet-500;
 }
 
 .glass-card {
-  @apply backdrop-blur-xl bg-white/5 border border-violet-900/20 rounded-xl transition duration-300 hover:bg-white/10;
+  @apply bg-white/5 backdrop-blur-xl border border-violet-500/20 rounded-xl transition-all duration-300 hover:bg-white/10;
 }
 
 .glass-inner-card {
-  @apply bg-violet-900/10 rounded-lg border border-violet-900/20 transition duration-300;
+  @apply bg-violet-900/10 rounded-lg border border-violet-500/20 transition-all duration-300;
 }
 
 .prose strong {
@@ -435,11 +435,14 @@ section h2 {
 
 /* Update icons color */
 [class^="lucide-"] {
-  @apply text-violet-600;
+  @apply text-violet-500;
 }
 
-/* Keep accent elements in orange */
-.accent-element {
-  @apply text-orange-500;
+.text-orange-300, .text-orange-400, .text-orange-500 {
+  @apply text-violet-300;
+}
+
+section {
+  @apply relative backdrop-blur-xl bg-black/30;
 }
 </style>
