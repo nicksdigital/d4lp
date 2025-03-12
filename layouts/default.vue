@@ -9,7 +9,9 @@
     </main>
 
     <!-- Floating UI for Auction Info -->
-    <FloatingUI v-if="showFloatingUI" />
+    <ClientOnly>
+  <FloatingUI v-if="showFloatingUI && route.path === '/'" />
+</ClientOnly>
     
     <!-- Footer -->
     <Footer />

@@ -39,12 +39,17 @@ const recentBids = ref([
 ])
 
 onMounted(() => {
-  gsap.to(".floating-panel", {
-    y: 8,
-    repeat: -1,
-    yoyo: true,
-    duration: 2.5,
-    ease: "power1.inOut"
+  nextTick(() => {
+    const panel = document.querySelector('.floating-panel')
+    if (panel) {
+      gsap.to(panel, {
+        y: 8,
+        repeat: -1,
+        yoyo: true,
+        duration: 2.5,
+        ease: "power1.inOut"
+      })
+    }
   })
 })
 </script>
