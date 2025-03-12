@@ -25,7 +25,7 @@
     seconds: "00"
   })
   
-  const auctionDate = new Date("2025-03-15T00:00:00Z").getTime()
+  const auctionDate = new Date("2025-03-25T00:00:00Z").getTime()
   
   const updateCountdown = () => {
     const now = new Date().getTime()
