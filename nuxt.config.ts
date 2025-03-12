@@ -18,5 +18,18 @@ export default defineNuxtConfig({
   server: {
     host: '0.0.0.0',
     port: 3000
+  },
+  // Add more specific configuration for development server
+  nitro: {
+    devProxy: {
+      '/api': {
+        target: 'http://0.0.0.0:3000/api',
+        changeOrigin: true
+      }
+    }
+  },
+  // Ensure all hosts are allowed
+  routeRules: {
+    '/**': { cors: true }
   }
 })
