@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "@nuxtjs/tailwindcss": "^6.13.1",
-    "@openzeppelin/contracts": "^5.2.0",
     "@pinia/nuxt": "^0.10.1",
     "@vueuse/nuxt": "^12.7.0",
     "ethers": "^6.13.5",
@@ -26,6 +25,9 @@
     "vue-router": "latest"
   },
   "devDependencies": {
-    "@hypernym/nuxt-gsap": "^2.4.3"
+    "@hypernym/nuxt-gsap": "^2.4.3",
+    "@openzeppelin/contracts": "^5.2.0",
+    "fs-extra": "^11.3.0",
+    "solc": "^0.8.29"
   }
 }
