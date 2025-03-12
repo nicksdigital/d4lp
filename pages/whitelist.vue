@@ -7,7 +7,9 @@
       <p class="text-gray-300 text-center max-w-2xl mx-auto mb-12">
         Join our exclusive presale by applying for the whitelist. Early participants will receive special benefits and guaranteed allocation in our Dutch auction.
       </p>
-      <WhitelistForm />
+      <div>
+        <WhitelistForm />
+      </div>
     </div>
   </div>
 </template>

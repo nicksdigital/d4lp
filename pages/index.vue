@@ -1,8 +1,8 @@
 <template>
-  <div class="flex flex-col">
+  <div class="relative flex flex-col">
     <!-- Hero Section -->
     <HeroSection class="min-h-screen" />
-    
+
     <!-- Stats Banner -->
     <div class="bg-gradient-to-r from-purple-900/50 to-orange-900/50 py-12 backdrop-blur-xl">
       <div class="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
