@@ -14,10 +14,9 @@ import {
 </script>
 
 <template>
-  <div>
-    <div class="min-h-screen bg-black/90">
+  <main class="min-h-screen bg-black/90">
       <!-- Hero Section -->
-      <div class="relative pt-[172px] pb-24 text-center"> <!-- Adjusted padding-top to account for both navbars -->
+      <div class="relative pt-[172px] pb-24 text-center">
         <div class="container mx-auto px-4">
           <h1 class="text-6xl font-bold text-violet-600">
             D4L Whitepaper
@@ -36,6 +35,7 @@ import {
       </div>
 
       <!-- Fixed Quick Navigation -->
+      <ClientOnly>
       <div class="fixed top-[72px] left-0 right-0 z-40 bg-black/95 backdrop-blur-xl border-b border-violet-900/30 transition-all duration-300">
         <div class="container mx-auto px-4 py-3">
           <div class="wp-nav-glass p-3 rounded-xl bg-gradient-to-br from-violet-900/20 to-violet-800/10">
@@ -66,6 +66,7 @@ import {
           </div>
         </div>
       </div>
+      </ClientOnly>
 
       <!-- Remove the spacer div as we're using padding on the hero section instead -->
 
@@ -383,8 +384,7 @@ import {
           <p class="text-gray-400">© 2024 D4L. All rights reserved.</p>
         </div>
       </footer>
-    </div>
-  </div>
+    </main>
 </template>
 
 <style scoped>
