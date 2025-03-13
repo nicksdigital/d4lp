@@ -9,7 +9,7 @@ defineProps({
 
 <template>
   <section 
-    class="relative w-full py-20 px-6 flex flex-col items-center text-center bg-cover bg-center"
+    class="section-container"
     :style="{ backgroundImage: bgImage ? `url(${bgImage})` : 'none' }"
   >
     <!-- Optional Dark Overlay -->
@@ -18,20 +18,20 @@ defineProps({
       class="absolute inset-0 bg-black/60 backdrop-blur-lg"
     ></div>
 
-    <div class="relative z-10 max-w-4xl">
+    <div class="relative z-10 max-w-4xl mx-auto space-content-lg">
       <!-- Section Title -->
       <h2 class="text-4xl font-extrabold text-white uppercase tracking-wide drop-shadow-lg">
         {{ title }}
       </h2>
 
       <!-- Section Subtitle -->
-      <p v-if="subtitle" class="mt-4 text-lg text-gray-300 opacity-80 max-w-3xl">
+      <p v-if="subtitle" class="text-lg text-gray-300 opacity-80 max-w-3xl">
         {{ subtitle }}
       </p>
 
-      <!-- Slot for Dynamic Content -->
-      <div class="mt-6">
-        <slot />
+      <!-- Content -->
+      <div class="text-content">
+        <slot></slot>
       </div>
     </div>
   </section>

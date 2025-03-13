@@ -3,50 +3,9 @@
 @import 'tailwindcss/utilities';
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* Update font paths with relative URLs */
 @font-face {
   font-family: 'Obviously';
-  src: url('../public/fonts/Obviously-Thin.woff') format('woff');
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Obviously';
-  src: url('../public/fonts/Obviously-Thin-Italic.woff') format('woff');
-  font-weight: 100;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Obviously';
-  src: url('../public/fonts/Obviously-Medium-Italic.woff') format('woff');
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Obviously';
-  src: url('../public/fonts/Obviously-Semibold.woff') format('woff');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Obviously';
-  src: url('../public/fonts/Obviously-Super-Italic.woff') format('woff');
-  font-weight: 800;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Obviously Compressed';
-  src: url('../public/fonts/Obviously-Compressed-Thin.woff') format('woff');
+  src: url('@/assets/fonts/Obviously-Thin.woff') format('woff');
   font-weight: 100;
   font-style: normal;
   font-display: swap;
@@ -55,7 +14,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    font-family: 'Obviously', sans-serif;
+    font-family: Inter, system-ui, sans-serif;
   }
   
   body {
@@ -64,52 +23,97 @@
   }
 
   /* Titles */
-  h1, h2, .title {
-    @apply font-[800] leading-tight font-obviously; /* Super weight */
+  h1 {
+    @apply font-[800] leading-tight font-obviously mb-8; /* Super weight */
+  }
+
+  h2 {
+    @apply font-[800] leading-tight font-obviously mb-6 mt-12; /* Super weight */
   }
 
   /* Subtitles */
-  h3, h4, .subtitle {
-    @apply font-semibold leading-snug font-obviously; /* Semibold weight */
+  h3 {
+    @apply font-semibold leading-snug font-obviously mb-4 mt-8; /* Semibold weight */
+  }
+
+  h4 {
+    @apply font-semibold leading-snug font-obviously mb-3 mt-6; /* Semibold weight */
   }
 
   /* Text/Paragraphs */
-  p, .body-text {
-    @apply font-thin leading-relaxed font-obviously; /* Thin weight */
+  p {
+    @apply font-thin leading-relaxed font-obviously mb-4; /* Thin weight */
   }
 
-  /* Paragraph titles */
+  /* Add spacing after groups of paragraphs */
+  p + h1, p + h2 {
+    @apply mt-16;
+  }
+
+  p + h3, p + h4 {
+    @apply mt-12;
+  }
+
+  /* Lists */
+  ul, ol {
+    @apply mb-4 ml-4;
+  }
+
+  li {
+    @apply mb-2;
+  }
+
+  /* Utility classes with improved spacing */
+  .title {
+    @apply font-[800] leading-tight font-obviously mb-8;
+  }
+
+  .subtitle {
+    @apply font-semibold leading-snug font-obviously mb-4;
+  }
+
+  .body-text {
+    @apply font-thin leading-relaxed font-obviously mb-4;
+  }
+
   .paragraph-title {
-    @apply font-thin leading-normal font-obviously; /* Thin weight */
-  }
-
-  /* Utility classes */
-  .font-obviously {
-    font-family: 'Obviously', sans-serif;
-  }
-
-  .font-obviously-compressed {
-    font-family: 'Obviously Compressed', sans-serif;
-  }
-
-  .font-super {
-    font-weight: 800;
-  }
-
-  .font-italic {
-    font-style: italic;
+    @apply font-thin leading-normal font-obviously mb-3 mt-6;
   }
 }
 
 @layer components {
+  /* Update section spacing */
   .section-container {
-    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
   }
   
   .section-title {
-    @apply text-4xl font-super font-obviously text-center mb-12;
+    @apply text-4xl font-super font-obviously text-center mb-16;
   }
-  
+
+  /* Content blocks with consistent spacing */
+  .content-block {
+    @apply mb-12 last:mb-0;
+  }
+
+  /* Text content wrapper */
+  .text-content {
+    @apply space-y-4;
+  }
+
+  /* Spacing utilities */
+  .space-content {
+    @apply space-y-8;
+  }
+
+  .space-content-lg {
+    @apply space-y-12;
+  }
+
+  .space-content-xl {
+    @apply space-y-16;
+  }
+
   .glass-effect {
     @apply bg-white/10 backdrop-blur-md border border-white/20;
   }

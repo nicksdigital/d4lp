@@ -3,17 +3,17 @@
     <!-- Background with blur effect -->
     <div class="absolute inset-0 bg-black/40 backdrop-blur-xl"></div>
     
-    <div class="container mx-auto px-6 relative z-10">
+    <div class="container mx-auto px-6 relative z-10 space-content-xl">
       <!-- Header -->
-      <div class="text-center mb-16">
-        <h2 class="text-5xl font-bold text-orange-500 mb-6">Roadmap</h2>
+      <div class="text-center space-content">
+        <h2 class="text-5xl font-bold text-orange-500">Roadmap</h2>
         <p class="text-xl text-gray-300 max-w-2xl mx-auto">
           Our journey to revolutionize DeFi through strategic milestones and continuous innovation
         </p>
       </div>
 
       <!-- Timeline -->
-      <div class="relative">
+      <div class="relative space-content-lg">
         <!-- Timeline Line -->
         <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-orange-500/30"></div>
 
