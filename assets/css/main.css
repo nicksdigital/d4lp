@@ -68,12 +68,12 @@
     @apply font-obviously-semibold font-semibold leading-snug mb-3 mt-6; /* Already using Semibold */
   }
 
-  /* Text/Paragraphs */
+  /* Text/Paragraphs - Updated to use Obviously-Regular */
   p {
-    @apply font-obviously font-thin leading-relaxed mb-4; /* Keep Obviously-Thin for regular text */
+    @apply font-obviously-regular font-normal leading-[1.8] mb-6 text-gray-200 text-lg;
   }
 
-  /* Add spacing after groups of paragraphs */
+  /* Update spacing between paragraphs and headings */
   p + h1, p + h2 {
     @apply mt-16;
   }
@@ -101,11 +101,20 @@
   }
 
   .body-text {
-    @apply font-thin leading-relaxed font-obviously mb-4;
+    @apply font-obviously-regular font-normal leading-[1.8] mb-6 text-gray-200 text-lg;
   }
 
   .paragraph-title {
     @apply font-thin leading-normal font-obviously mb-3 mt-6;
+  }
+
+  .text-content {
+    @apply space-y-6;
+  }
+
+  /* If you have any specific text content areas */
+  .content-area p {
+    @apply text-gray-200 leading-[1.8] text-lg font-obviously-regular font-normal;
   }
 }
 
