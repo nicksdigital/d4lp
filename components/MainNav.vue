@@ -49,7 +49,7 @@ const isActive = (path) => {
           :to="item.to" 
           :class="[
             'nav-link group flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-300 hover:bg-white/10',
-            'font-obviously font-thin',
+            'font-obviously-regular',
             isActive(item.to) ? 'text-violet-400 bg-white/5' : 'text-white'
           ]"
         >

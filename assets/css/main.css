@@ -4,6 +4,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 @font-face {
+  font-family: "Obviously-Regular";
+  src: url('@/assets/fonts/Obviously-Regular.woff') format('woff'),
+       url('@/assets/fonts/Obviously-Regular.woff2') format('woff2'),
+       url('@/assets/fonts/Obviously-Regular.eot'),
+       url('@/assets/fonts/Obviously-Regular.eot?#iefix') format('embedded-opentype'),
+       url('@/assets/fonts/Obviously-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Obviously-Thin";
   src: url('@/assets/fonts/Obviously-Thin.woff') format('woff'),
        url('@/assets/fonts/Obviously-Thin.woff2') format('woff2'),
@@ -30,11 +42,11 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    font-family: Inter, system-ui, sans-serif;
+    font-family: "Obviously-Regular", system-ui, sans-serif;
   }
   
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: "Obviously-Regular", sans-serif;
     @apply bg-background antialiased;
   }
 
