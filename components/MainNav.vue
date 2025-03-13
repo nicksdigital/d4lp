@@ -26,10 +26,8 @@ const isActive = (path) => {
 };
 
 const fontLoaded = ref(false)
-const handleImageError = (e) => {
-  console.error('Logo failed to load:', e)
-  // You might want to set a fallback image here
-}
+
+
 
 onMounted(() => {
   // Check if fonts are loaded
@@ -42,13 +40,13 @@ onMounted(() => {
 <template>
   <nav class="fixed top-0 w-full z-50 bg-black/95 backdrop-blur-xl border-b border-white/20 shadow-lg transition-all duration-300">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <!-- Simplified Logo -->
+      <!-- Updated Logo to use PNG -->
       <NuxtLink to="#top" class="text-white text-xl font-obviously-semibold flex items-center space-x-3">
-        <div class="w-12 h-12 relative">
+        <div class="w-12 h-12 relative flex items-center justify-center">
           <img 
-            src="/d4l-ai-logo.svg" 
+            src="/d4l-ai-logo.png" 
             alt="D4L Logo" 
-            class="w-full h-full"
+            class="w-10 h-10 object-contain"
             @error="handleImageError"
           />
         </div>
