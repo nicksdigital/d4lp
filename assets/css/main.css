@@ -40,25 +40,25 @@
 
   /* Titles */
   h1 {
-    @apply font-[800] leading-tight font-obviously mb-8; /* Super weight */
+    @apply font-obviously-semibold font-[800] leading-tight mb-8; /* Update to use Obviously-Semibold */
   }
 
   h2 {
-    @apply font-[800] leading-tight font-obviously mb-6 mt-12; /* Super weight */
+    @apply font-obviously-semibold font-[800] leading-tight mb-6 mt-12; /* Update to use Obviously-Semibold */
   }
 
   /* Subtitles */
   h3 {
-    @apply font-semibold leading-snug font-obviously mb-4 mt-8; /* Semibold weight */
+    @apply font-obviously-semibold font-semibold leading-snug mb-4 mt-8; /* Already using Semibold */
   }
 
   h4 {
-    @apply font-semibold leading-snug font-obviously mb-3 mt-6; /* Semibold weight */
+    @apply font-obviously-semibold font-semibold leading-snug mb-3 mt-6; /* Already using Semibold */
   }
 
   /* Text/Paragraphs */
   p {
-    @apply font-thin leading-relaxed font-obviously mb-4; /* Thin weight */
+    @apply font-obviously font-thin leading-relaxed mb-4; /* Keep Obviously-Thin for regular text */
   }
 
   /* Add spacing after groups of paragraphs */
@@ -81,11 +81,11 @@
 
   /* Utility classes with improved spacing */
   .title {
-    @apply font-[800] leading-tight font-obviously mb-8;
+    @apply font-obviously-semibold font-[800] leading-tight mb-8;
   }
 
   .subtitle {
-    @apply font-semibold leading-snug font-obviously mb-4;
+    @apply font-obviously-semibold font-semibold leading-snug mb-4;
   }
 
   .body-text {
