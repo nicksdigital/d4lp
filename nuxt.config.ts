@@ -1,5 +1,32 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app: {
+    head: {
+      link: [
+        {
+          rel: 'preload',
+          as: 'font',
+          href: '/assets/fonts/Obviously-Regular.woff2',
+          type: 'font/woff2',
+          crossorigin: 'anonymous'
+        },
+        {
+          rel: 'preload',
+          as: 'font',
+          href: '/assets/fonts/Obviously-Semibold.woff2',
+          type: 'font/woff2',
+          crossorigin: 'anonymous'
+        },
+        {
+          rel: 'preload',
+          as: 'font',
+          href: '/assets/fonts/Obviously-Thin.woff2',
+          type: 'font/woff2',
+          crossorigin: 'anonymous'
+        }
+      ]
+    }
+  },
   compatibilityDate: '2024-11-01',
   devtools: { enabled: false },
   modules: [

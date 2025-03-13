@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
 import { Home, Rocket, Layers, FileText, Users, LogIn } from "lucide-vue-next";
 import { useRoute } from 'vue-router';
 
@@ -24,21 +24,35 @@ const isActive = (path) => {
   }
   return route.path.includes(path.replace('/#', ''));
 };
+
+const fontLoaded = ref(false)
+const handleImageError = (e) => {
+  console.error('Logo failed to load:', e)
+  // You might want to set a fallback image here
+}
+
+onMounted(() => {
+  // Check if fonts are loaded
+  document.fonts.ready.then(() => {
+    fontLoaded.value = true
+  })
+})
 </script>
 
 <template>
   <nav class="fixed top-0 w-full z-50 bg-black/95 backdrop-blur-xl border-b border-white/20 shadow-lg transition-all duration-300">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
       <!-- Simplified Logo -->
-      <NuxtLink to="#top" class="text-white text-xl font-super font-obviously flex items-center space-x-3">
-        <div class="w-12 h-12">
+      <NuxtLink to="#top" class="text-white text-xl font-obviously-semibold flex items-center space-x-3">
+        <div class="w-12 h-12 relative">
           <img 
             src="/d4l-ai-logo.svg" 
             alt="D4L Logo" 
             class="w-full h-full"
+            @error="handleImageError"
           />
         </div>
-        <span>D4L</span>
+        <span class="opacity-0 transition-opacity duration-300" :class="{ 'opacity-100': fontLoaded }">D4L</span>
       </NuxtLink>
 
       <!-- NAVIGATION MENU -->
