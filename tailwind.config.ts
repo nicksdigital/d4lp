@@ -63,7 +63,7 @@ export default {
         },
       },
       fontFamily: {
-        'obviously': ['Obviously', 'sans-serif'],
+        'obviously': ['Obviously-Thin', 'sans-serif'],
         'obviously-compressed': ['Obviously Compressed', 'sans-serif'],
       },
       fontWeight: {
