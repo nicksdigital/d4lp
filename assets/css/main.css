@@ -3,10 +3,10 @@
 @import 'tailwindcss/utilities';
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* Regular weights */
+/* Update font paths with relative URLs */
 @font-face {
   font-family: 'Obviously';
-  src: url('/fonts/Obviously-Thin.woff') format('woff');
+  src: url('../public/fonts/Obviously-Thin.woff') format('woff');
   font-weight: 100;
   font-style: normal;
   font-display: swap;
@@ -14,7 +14,7 @@
 
 @font-face {
   font-family: 'Obviously';
-  src: url('/fonts/Obviously-Thin-Italic.woff') format('woff');
+  src: url('../public/fonts/Obviously-Thin-Italic.woff') format('woff');
   font-weight: 100;
   font-style: italic;
   font-display: swap;
@@ -22,7 +22,7 @@
 
 @font-face {
   font-family: 'Obviously';
-  src: url('/fonts/Obviously-Medium-Italic.woff') format('woff');
+  src: url('../public/fonts/Obviously-Medium-Italic.woff') format('woff');
   font-weight: 500;
   font-style: italic;
   font-display: swap;
@@ -30,7 +30,7 @@
 
 @font-face {
   font-family: 'Obviously';
-  src: url('/fonts/Obviously-Semibold.woff') format('woff');
+  src: url('../public/fonts/Obviously-Semibold.woff') format('woff');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -38,16 +38,15 @@
 
 @font-face {
   font-family: 'Obviously';
-  src: url('/fonts/Obviously-Super-Italic.woff') format('woff');
+  src: url('../public/fonts/Obviously-Super-Italic.woff') format('woff');
   font-weight: 800;
   font-style: italic;
   font-display: swap;
 }
 
-/* Compressed variant */
 @font-face {
   font-family: 'Obviously Compressed';
-  src: url('/fonts/Obviously-Compressed-Thin.woff') format('woff');
+  src: url('../public/fonts/Obviously-Compressed-Thin.woff') format('woff');
   font-weight: 100;
   font-style: normal;
   font-display: swap;
