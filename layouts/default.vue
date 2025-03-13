@@ -4,14 +4,19 @@
     <MainNav />
     
     <!-- Main Content with smooth page transitions -->
-    <main class="flex-grow mt-[72px]"> <!-- Fixed height of nav -->
+    <main class="flex-grow mt-[72px]">
       <slot />
     </main>
 
     <!-- Floating UI for Auction Info -->
     <ClientOnly>
-  <FloatingUI v-if="showFloatingUI && route.path === '/'" />
-</ClientOnly>
+      <FloatingUI v-if="showFloatingUI && route.path === '/'" />
+    </ClientOnly>
+    
+    <!-- No Logos Message -->
+    <ClientOnly>
+      <NoLogosMessage />
+    </ClientOnly>
     
     <!-- Footer -->
     <Footer />
@@ -29,7 +34,6 @@ const showFloatingUI = ref(false)
 const { activeSection } = useScrollSpy(["about", "auction", "features", "community", "contact"])
 
 onMounted(() => {
-  // Show floating UI only on home page
   showFloatingUI.value = route.path === '/'
 })
 </script>
