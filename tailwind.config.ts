@@ -22,7 +22,28 @@ export default {
         'muted': '#64748b'
       },
       animation: {
-        'pulse-slow': 'pulse 4s infinite'
+        'pulse-slow': 'pulse 4s infinite',
+        'spin-slow': 'spin 8s linear infinite',
+        'spin-reverse': 'spin-reverse 12s linear infinite',
+        'logo-spin': 'logo-spin 3s linear infinite',
+      },
+      keyframes: {
+        'spin-reverse': {
+          from: {
+            transform: 'rotate(360deg)'
+          },
+          to: {
+            transform: 'rotate(0deg)'
+          },
+        },
+        'logo-spin': {
+          from: {
+            transform: 'rotateY(0deg)'
+          },
+          to: {
+            transform: 'rotateY(360deg)'
+          },
+        }
       },
       container: {
         center: true,
@@ -40,6 +61,16 @@ export default {
           xl: '1280px',
           '2xl': '1536px',
         },
+      },
+      fontFamily: {
+        'obviously': ['Obviously', 'sans-serif'],
+        'obviously-compressed': ['Obviously Compressed', 'sans-serif'],
+      },
+      fontWeight: {
+        'thin': '100',
+        'medium': '500',
+        'semibold': '600',
+        'super': '800',
       }
     }
   },

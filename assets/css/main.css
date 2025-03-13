@@ -3,14 +3,102 @@
 @import 'tailwindcss/utilities';
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
+/* Regular weights */
+@font-face {
+  font-family: 'Obviously';
+  src: url('/fonts/Obviously-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Obviously';
+  src: url('/fonts/Obviously-Thin-Italic.woff') format('woff');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Obviously';
+  src: url('/fonts/Obviously-Medium-Italic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Obviously';
+  src: url('/fonts/Obviously-Semibold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Obviously';
+  src: url('/fonts/Obviously-Super-Italic.woff') format('woff');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Compressed variant */
+@font-face {
+  font-family: 'Obviously Compressed';
+  src: url('/fonts/Obviously-Compressed-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
+    font-family: 'Obviously', sans-serif;
   }
   
   body {
     font-family: 'Inter', sans-serif;
     @apply bg-background antialiased;
+  }
+
+  /* Titles */
+  h1, h2, .title {
+    @apply font-[800] leading-tight font-obviously; /* Super weight */
+  }
+
+  /* Subtitles */
+  h3, h4, .subtitle {
+    @apply font-semibold leading-snug font-obviously; /* Semibold weight */
+  }
+
+  /* Text/Paragraphs */
+  p, .body-text {
+    @apply font-thin leading-relaxed font-obviously; /* Thin weight */
+  }
+
+  /* Paragraph titles */
+  .paragraph-title {
+    @apply font-thin leading-normal font-obviously; /* Thin weight */
+  }
+
+  /* Utility classes */
+  .font-obviously {
+    font-family: 'Obviously', sans-serif;
+  }
+
+  .font-obviously-compressed {
+    font-family: 'Obviously Compressed', sans-serif;
+  }
+
+  .font-super {
+    font-weight: 800;
+  }
+
+  .font-italic {
+    font-style: italic;
   }
 }
 
@@ -20,11 +108,24 @@
   }
   
   .section-title {
-    @apply text-4xl font-bold text-center mb-12;
+    @apply text-4xl font-super font-obviously text-center mb-12;
   }
   
   .glass-effect {
     @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+
+  /* Add a new class for consistent title styling */
+  .title-super {
+    @apply font-super font-obviously leading-tight;
+  }
+
+  .title-semibold {
+    @apply font-semibold font-obviously leading-snug;
+  }
+
+  .text-body {
+    @apply font-thin font-obviously leading-relaxed;
   }
 
   .bg-background {

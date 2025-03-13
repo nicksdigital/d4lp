@@ -32,10 +32,10 @@ const sections = [
     <div class="relative pt-[172px] pb-24 text-center">
       <div class="container mx-auto px-4">
         <div class="glass-hero-card p-12 rounded-2xl mb-12">
-          <h1 class="text-7xl font-bold bg-gradient-to-r from-violet-400 to-violet-600 bg-clip-text text-transparent">
+          <h1 class="text-7xl font-super font-obviously bg-gradient-to-r from-violet-400 to-violet-600 bg-clip-text text-transparent">
             D4L Whitepaper
           </h1>
-          <p class="text-2xl text-violet-200/80 mt-6 max-w-2xl mx-auto font-light">
+          <p class="text-2xl text-violet-200/80 mt-6 max-w-2xl mx-auto font-thin font-obviously">
             Risk It, Build It, Bank It
           </p>
 
