@@ -29,42 +29,16 @@ const isActive = (path) => {
 <template>
   <nav class="fixed top-0 w-full z-50 bg-black/95 backdrop-blur-xl border-b border-white/20 shadow-lg transition-all duration-300">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <!-- Enhanced 3D Logo -->
-      <NuxtLink to="#top" class="text-white text-xl font-super font-obviously flex items-center space-x-3 group">
-        <div class="relative w-12 h-12 perspective-1000">
-          <!-- 3D Container -->
-          <div class="logo-3d-container relative w-full h-full transform-style-preserve-3d group-hover:animate-logo-spin">
-            <!-- Base glow effect -->
-            <div class="absolute inset-0 rounded-full bg-violet-500/20 blur-xl group-hover:bg-violet-500/40 
-                        transition-all duration-500"></div>
-            
-            <!-- Front face -->
-            <div class="absolute w-full h-full backface-hidden">
-              <img 
-                src="/d4l-ai-logo.svg" 
-                alt="D4L Logo" 
-                class="w-full h-full relative z-10 group-hover:filter group-hover:brightness-125
-                       transition-all duration-300 drop-shadow-[0_0_10px_rgba(139,92,246,0.5)]"
-              />
-            </div>
-            
-            <!-- Back face -->
-            <div class="absolute w-full h-full backface-hidden transform rotate-y-180">
-              <img 
-                src="/d4l-ai-logo.svg" 
-                alt="D4L Logo" 
-                class="w-full h-full relative z-10 group-hover:filter group-hover:brightness-125
-                       transition-all duration-300 drop-shadow-[0_0_10px_rgba(139,92,246,0.5)]"
-              />
-            </div>
-
-            <!-- Orbital glow effect -->
-            <div class="absolute inset-0 bg-gradient-to-r from-violet-500/0 via-violet-500/20 to-violet-500/0
-                        rounded-full animate-spin-reverse opacity-0 group-hover:opacity-100
-                        transition-opacity duration-300"></div>
-          </div>
+      <!-- Simplified Logo -->
+      <NuxtLink to="#top" class="text-white text-xl font-super font-obviously flex items-center space-x-3">
+        <div class="w-12 h-12">
+          <img 
+            src="/d4l-ai-logo.svg" 
+            alt="D4L Logo" 
+            class="w-full h-full"
+          />
         </div>
-        <span class="group-hover:text-violet-400 transition-colors duration-300">D4L</span>
+        <span>D4L</span>
       </NuxtLink>
 
       <!-- NAVIGATION MENU -->
@@ -159,60 +133,6 @@ const isActive = (path) => {
 .nav-button {
   background: linear-gradient(135deg, theme('colors.violet.500'), theme('colors.violet.600'));
   box-shadow: 0 4px 20px -5px theme('colors.violet.500/30');
-}
-
-.perspective-1000 {
-  perspective: 1000px;
-}
-
-.transform-style-preserve-3d {
-  transform-style: preserve-3d;
-}
-
-.backface-hidden {
-  backface-visibility: hidden;
-}
-
-.rotate-y-180 {
-  transform: rotateY(180deg);
-}
-
-@keyframes logo-spin {
-  0% {
-    transform: rotateY(0deg);
-  }
-  100% {
-    transform: rotateY(360deg);
-  }
-}
-
-.animate-logo-spin {
-  animation: logo-spin 3s linear infinite;
-}
-
-/* Optional: Add these smooth transitions */
-.logo-3d-container {
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Enhanced shadow effect */
-.logo-3d-container::before {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  background: linear-gradient(45deg, transparent, rgba(139, 92, 246, 0.3), transparent);
-  border-radius: 50%;
-  z-index: -1;
-  animation: border-pulse 2s linear infinite;
-}
-
-@keyframes border-pulse {
-  0%, 100% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 1;
-  }
 }
 </style>
 
