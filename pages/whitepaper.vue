@@ -1,16 +1,7 @@
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue'
 import { 
-  Rocket, 
-  Layout, 
-  Code2, 
-  Coins,
-  Calendar,
-  Target,
-  Shield,
-  Users,
-  Lightbulb,
-  TrendingUp,
-  FileText
+  Rocket, Layout, Code2, Coins, Calendar, Target, Shield, Users, Lightbulb, TrendingUp, FileText, Cpu, Map, Layers
 } from 'lucide-vue-next'
 
 const sections = [
@@ -18,573 +9,581 @@ const sections = [
   { id: 'platform-overview', title: '2. Platform Overview', icon: Layout },
   { id: 'technical', title: '3. Technical Architecture', icon: Code2 },
   { id: 'tokenomics', title: '4. Tokenomics & Allocation', icon: Coins },
-  { id: 'roadmap', title: '5. Roadmap', icon: Calendar },
-  { id: 'governance', title: '6. Governance', icon: Shield },
-  { id: 'risk', title: '7. Risk Management', icon: Target },
-  { id: 'community', title: '8. Community', icon: Users },
-  { id: 'legal', title: '9. Legal & Compliance', icon: FileText }
+  { id: 'technology', title: '5. Technology Stack', icon: Layers },
+  { id: 'roadmap', title: '6. Roadmap', icon: Calendar },
+  { id: 'security', title: '7. Security', icon: Shield },
+  { id: 'risk', title: '8. Risk Management', icon: Target },
+  { id: 'community', title: '9. Community & Governance', icon: Users },
+  { id: 'legal', title: '10. Legal & Compliance', icon: FileText }
 ]
+
+const activeSection = ref('')
+const readingProgress = ref(0)
+
+const calculateReadingProgress = () => {
+  const windowHeight = window.innerHeight
+  const documentHeight = document.documentElement.scrollHeight - windowHeight
+  const scrollTop = window.scrollY
+  readingProgress.value = (scrollTop / documentHeight) * 100
+}
+
+const updateActiveSection = () => {
+  for (const section of sections) {
+    const element = document.getElementById(section.id)
+    if (element) {
+      const rect = element.getBoundingClientRect()
+      if (rect.top <= 200 && rect.bottom >= 200) {
+        activeSection.value = section.id
+        break
+      }
+    }
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', calculateReadingProgress)
+  window.addEventListener('scroll', updateActiveSection)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', calculateReadingProgress)
+  window.removeEventListener('scroll', updateActiveSection)
+})
 </script>
 
 <template>
   <main class="min-h-screen bg-background">
-    <!-- Hero Section with enhanced glassmorphism -->
+    <!-- Reading Progress Bar -->
+    <div class="fixed top-0 left-0 w-full h-1 bg-violet-900/20 z-50">
+      <div 
+        class="h-full bg-gradient-to-r from-violet-500 to-violet-700 transition-all duration-300"
+        :style="{ width: `${readingProgress}%` }"
+      ></div>
+    </div>
+
+    <!-- Hero Section -->
     <div class="relative pt-[172px] pb-24 text-center">
       <div class="container mx-auto px-4">
-        <div class="glass-hero-card p-12 rounded-2xl mb-12">
-          <h1 class="text-7xl font-display-semibold bg-gradient-to-r from-violet-400 to-violet-600 bg-clip-text text-transparent">
-            D4L Whitepaper
-          </h1>
-          <p class="text-2xl text-violet-200/80 mt-6 max-w-2xl mx-auto font-display-thin">
-            Risk It, Build It, Bank It
-          </p>
-
-          <a href="/docs/D4L-Whitepaper.pdf" 
-             target="_blank"
-             class="mt-8 inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-violet-700 to-violet-600 
-                    hover:from-violet-600 hover:to-violet-500 text-white rounded-xl shadow-lg transition-all duration-300 
-                    transform hover:scale-105 hover:shadow-violet-500/25 backdrop-blur-sm">
-            <FileText class="w-5 h-5" />
-            Download Full Whitepaper
-          </a>
+        <div class="glass-hero-card p-12 rounded-2xl mb-12 relative overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-br from-violet-600/10 to-violet-900/20 backdrop-blur-xl"></div>
+          <div class="relative z-10">
+            <h1 class="text-7xl font-display-semibold bg-gradient-to-r from-violet-400 to-violet-600 bg-clip-text text-transparent">
+              D4L Whitepaper
+            </h1>
+            <p class="text-2xl text-violet-200/80 mt-6 max-w-2xl mx-auto font-display-thin">
+              Risk It, Build It, Bank It
+            </p>
+            <div class="mt-8 flex items-center justify-center gap-4">
+              <a href="/docs/D4L-Whitepaper.pdf" 
+                target="_blank"
+                class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-violet-700 to-violet-600 
+                      hover:from-violet-600 hover:to-violet-500 text-white rounded-xl shadow-lg transition-all duration-300 
+                      transform hover:scale-105 hover:shadow-violet-500/25 backdrop-blur-sm">
+                <FileText class="w-5 h-5" />
+                Download PDF
+              </a>
+              <button 
+                @click="() => document.getElementById('executive-summary')?.scrollIntoView({ behavior: 'smooth', block: 'start' })"
+                class="inline-flex items-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 
+                      text-white rounded-xl transition-all duration-300 backdrop-blur-sm">
+                Read Online
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Enhanced Navigation with better glassmorphism -->
+    <!-- Side Navigation -->
+    <div class="fixed left-4 top-1/2 transform -translate-y-1/2 hidden xl:block z-40">
+      <nav class="space-y-2">
+        <a v-for="section in sections" 
+           :key="section.id"
+           :href="`#${section.id}`"
+           class="flex items-center gap-3 p-2 rounded-lg transition-all duration-300 group hover:bg-violet-500/20"
+           :class="activeSection === section.id ? 'bg-violet-500/20 text-violet-400' : 'text-gray-400 hover:text-violet-400'">
+          <component :is="section.icon" class="w-5 h-5" />
+          <span class="font-display-regular text-sm whitespace-nowrap transition-all duration-300"
+                :class="activeSection === section.id ? 'opacity-100' : 'opacity-20 group-hover:opacity-60'">
+            {{ section.title }}
+          </span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Mobile/Tablet Navigation -->
     <ClientOnly>
-      <div class="sticky top-[72px] left-0 right-0 z-40 backdrop-blur-xl bg-black/40">
-        <div class="container mx-auto px-4 py-4">
-          <div class="glass-nav-container p-4 rounded-2xl bg-gradient-to-br from-violet-900/10 to-violet-800/5">
-            <div class="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-9 gap-3">
-              <a v-for="(section, index) in [
-                'executive-summary', 
-                'platform-overview', 
-                'technical', 
-                'tokenomics', 
-                'roadmap',
-                'governance',
-                'risk',
-                'community',
-                'legal'
-              ]" 
-                 :key="section"
-                 :href="`#${section}`"
-                 class="nav-item relative group">
-                <span class="relative z-10 text-violet-200 group-hover:text-white transition-all duration-300 text-sm font-display-regular 
-                           flex items-center justify-center py-3 px-4">
-                  {{ section.replace('-', ' ').toUpperCase() }}
-                </span>
-              </a>
-            </div>
+      <div class="sticky top-[72px] left-0 right-0 z-40 backdrop-blur-xl bg-black/40 xl:hidden">
+        <div class="container mx-auto px-4 py-4 overflow-x-auto">
+          <div class="flex gap-4 min-w-max">
+            <a v-for="section in sections" 
+               :key="section.id"
+               :href="`#${section.id}`"
+               class="px-4 py-2 rounded-lg transition-all duration-300 flex items-center gap-2"
+               :class="activeSection === section.id ? 'bg-violet-500/20 text-violet-400' : 'text-gray-400'">
+              <component :is="section.icon" class="w-4 h-4" />
+              <span class="font-display-regular text-sm whitespace-nowrap">{{ section.title }}</span>
+            </a>
           </div>
         </div>
       </div>
     </ClientOnly>
 
-    <!-- Content Sections with enhanced glassmorphism -->
-   
-    <!-- Executive Summary -->
-    <section id="executive-summary" class="py-16 relative">
-      <div class="container mx-auto px-4">
-        <div class="glass-section-card p-8 rounded-2xl backdrop-blur-2xl bg-white/[0.03] hover:bg-white/[0.05] 
-                    transition-all duration-300 border border-white/10">
-          <div class="flex items-center gap-4 mb-8">
-            <div class="p-3 rounded-xl bg-violet-500/10">
-              <Rocket class="w-8 h-8 text-violet-400" />
+    <!-- Content Sections -->
+    <div class="container mx-auto px-4 pb-24">
+      <div class="max-w-4xl mx-auto">
+        <!-- Executive Summary -->
+        <section id="executive-summary" class="py-16 scroll-mt-32">
+          <div class="glass-section-card p-8 rounded-2xl backdrop-blur-2xl bg-white/[0.03] 
+                      hover:bg-white/[0.05] transition-all duration-500 border border-white/10">
+            <div class="flex items-center gap-4 mb-8">
+              <div class="p-3 rounded-xl bg-violet-500/10">
+                <Rocket class="w-8 h-8 text-violet-400" />
+              </div>
+              <h2 class="text-4xl font-display-semibold bg-gradient-to-r from-violet-400 to-violet-600 
+                         bg-clip-text text-transparent">
+                1. Executive Summary
+              </h2>
             </div>
-            <h2 class="text-4xl font-bold bg-gradient-to-r from-violet-400 to-violet-600 bg-clip-text text-transparent">
-              1. Executive Summary
-            </h2>
-          </div>
-          <div class="prose prose-lg prose-invert max-w-none space-y-6">
-            <p class="text-2xl font-display-light text-violet-200">Welcome to D4L: Ride the D4L Wave: Risk It, Build It, Bank It</p>
-            <div class="bg-white/[0.02] p-6 rounded-xl border border-white/5">
-              <p class="text-gray-300 leading-relaxed">
-                D4L isn't some boring platform—it's the beating heart of crypto, cultivating a lifestyle built for those who 
-                live for wild bets, the enthusiasts who dream in code, and the investors chasing fat stacks.
+            <div class="prose prose-lg prose-invert max-w-none space-y-6">
+              <p>
+                D4L represents a paradigm shift in decentralized finance, combining advanced trading mechanisms
+                with user-centric design. Our platform integrates cutting-edge technologies including:
               </p>
+              <ul class="list-disc pl-6 space-y-2">
+                <li>HydraCurve™ AMM for optimal liquidity management</li>
+                <li>AI-driven risk assessment and portfolio optimization</li>
+                <li>NFT-backed liquidity positions</li>
+                <li>Cross-chain compatibility and seamless asset transfer</li>
+              </ul>
             </div>
-            <div class="bg-white/[0.02] p-6 rounded-xl border border-white/5">
-              <p class="text-gray-300 leading-relaxed">
-                We're throwing advanced trading, gamified battles, meme coin madness, prediction markets, social engagement 
-                and robust risk management into a comprehensive DeFi blender, creating an ecosystem that's equal parts 
-                adventurous and rock-solid.
+          </div>
+        </section>
+
+        <!-- Platform Overview -->
+        <section id="platform-overview" class="py-16 scroll-mt-32">
+          <div class="glass-section-card p-8 rounded-2xl backdrop-blur-2xl bg-white/[0.03] hover:bg-white/[0.05] transition-all duration-500 border border-white/10">
+            <div class="flex items-center gap-4 mb-8">
+              <div class="p-3 rounded-xl bg-violet-500/10">
+                <Layout class="w-8 h-8 text-violet-400" />
+              </div>
+              <h2 class="text-4xl font-display-semibold bg-gradient-to-r from-violet-400 to-violet-600 bg-clip-text text-transparent">
+                2. Platform Overview
+              </h2>
+            </div>
+            <div class="prose prose-lg prose-invert max-w-none space-y-6">
+              <p>
+                D4L is a next-generation DeFi platform that combines advanced trading mechanisms with innovative risk management solutions.
+                Our platform is designed to serve both retail and institutional users with a focus on security, efficiency, and user experience.
               </p>
+              <h3 class="text-2xl text-violet-400">Key Features</h3>
+              <ul class="list-disc pl-6 space-y-2">
+                <li>Advanced order types and execution algorithms</li>
+                <li>Cross-chain asset management</li>
+                <li>Institutional-grade security measures</li>
+                <li>Automated portfolio rebalancing</li>
+                <li>Social trading integration</li>
+              </ul>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- Platform Overview -->
-    <section id="platform-overview" class="py-16 relative">
-      <div class="container mx-auto px-4">
-        <div class="glass-section-card p-8 rounded-2xl backdrop-blur-2xl">
-          <div class="flex items-center gap-4 mb-8">
-            <Layout class="w-8 h-8 text-violet-400" />
-            <h2 class="text-4xl font-bold bg-gradient-to-r from-violet-400 to-violet-600 bg-clip-text text-transparent">
-              2. Platform Overview
-            </h2>
-          </div>
-          <div class="grid md:grid-cols-2 gap-8">
-            <div class="glass-card p-8">
-              <div class="flex items-center gap-3 mb-4">
-                <Lightbulb class="w-6 h-6 text-violet-300" />
-                <h4 class="text-xl font-display-semibold text-violet-300">Meme Coin Launchpad</h4>
+        <!-- Technical Architecture -->
+        <section id="technical" class="py-16 scroll-mt-32">
+          <div class="glass-section-card p-8 rounded-2xl backdrop-blur-2xl bg-white/[0.03] 
+                      hover:bg-white/[0.05] transition-all duration-500 border border-white/10">
+            <div class="flex items-center gap-4 mb-8">
+              <div class="p-3 rounded-xl bg-violet-500/10">
+                <Code2 class="w-8 h-8 text-violet-400" />
               </div>
-              <div class="space-y-4">
-                <p><strong>What:</strong> Spin up your own meme coin with D4L's creator tools—customize it, secure it, launch it. Our verification system sniffs out scams, anti-bot features, plus no rug pulls to ruin the party.</p>
-                <p><strong>Next Level:</strong> Hit market cap milestones, and your token's promoted to BonkWars—where the real pioneers shine. It's a proving ground for hype and hustle.</p>
-                <p><strong>Why Join:</strong> Creators get a safe shot at greatness; risk takers snag legit tokens to ride. Moonshots with guardrails—pure D4L style.</p>
-              </div>
+              <h2 class="text-4xl font-display-semibold bg-gradient-to-r from-violet-400 to-violet-600 
+                         bg-clip-text text-transparent">
+                3. Technical Architecture
+              </h2>
             </div>
-            <div class="glass-card p-8">
-              <div class="flex items-center gap-3 mb-4">
-                <TrendingUp class="w-6 h-6 text-violet-300" />
-                <h4 class="text-xl font-display-semibold text-violet-300">DEX: Powered by HydraCurve</h4>
-              </div>
-              <div class="space-y-4">
-                <p><strong>What:</strong> Trade cross-chain with low slippage, backed by a 30% D4L liquidity pool that keeps the gears turning. Secure trading with built in liquidity, no more sketchy swaps—D4L's DEX is built for speed and stability.</p>
-                <p><strong>HydraCurve Edge:</strong> This is not your grandpa's AMM. HydraCurve's a dynamic pricing beast, flexing with market swings to keep capital where it matters—up to 130% more efficient than the old dogs.</p>
-              </div>
+            <div class="prose prose-lg prose-invert max-w-none space-y-6">
+              <h3 class="text-2xl text-violet-400">Blockchain Infrastructure</h3>
+              <p>
+                D4L is engineered on Base, an Ethereum Layer-2 scaling solution, harnessing the ERC-20 standard
+                for the $D4L token. This design guarantees broad compatibility with wallets, decentralized
+                applications (dApps), and exchanges.
+              </p>
+              
+              <h3 class="text-2xl text-violet-400">Smart Contract Architecture</h3>
+              <p>
+                D4L runs on a modular stack of smart contracts:
+              </p>
+              <ul class="list-disc pl-6 space-y-2">
+                <li><strong>D4LController:</strong> Core protocol management</li>
+                <li><strong>SecurityModule:</strong> Security and access control</li>
+                <li><strong>LiquidityModule:</strong> AMM and liquidity management</li>
+                <li><strong>SocialModule:</strong> Social trading features</li>
+                <li><strong>InsuranceModule:</strong> Risk mitigation and insurance</li>
+                <li><strong>PredictionMarketModule:</strong> Market analysis</li>
+                <li><strong>MomentumModule:</strong> Trading signals</li>
+                <li><strong>DEX & ENS Modules:</strong> Exchange and naming services</li>
+              </ul>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- Technical Architecture -->
-    <section id="technical" class="py-16 relative">
-      <div class="container mx-auto px-4">
-        <div class="glass-section-card p-8 rounded-2xl backdrop-blur-2xl bg-white/[0.03] hover:bg-white/[0.05] 
-                    transition-all duration-300 border border-white/10">
-          <div class="flex items-center gap-4 mb-8">
-            <div class="p-3 rounded-xl bg-violet-500/10">
-              <Code2 class="w-8 h-8 text-violet-400" />
-            </div>
-            <h2 class="text-4xl font-bold bg-gradient-to-r from-violet-400 to-violet-600 bg-clip-text text-transparent">
-              2. Technical Architecture
-            </h2>
-          </div>
-          <div class="grid md:grid-cols-2 gap-8">
-            <!-- Core Infrastructure Card -->
-            <div class="bg-white/[0.02] p-8 rounded-xl border border-white/5 hover:bg-white/[0.04] 
-                        transition-all duration-300 hover:transform hover:-translate-y-1">
-              <div class="flex items-center gap-3 mb-6">
-                <div class="p-2 rounded-lg bg-violet-500/10">
-                  <Shield class="w-6 h-6 text-violet-300" />
-                </div>
-                <h4 class="text-xl font-display-semibold text-violet-300">Core Infrastructure</h4>
+        <!-- Tokenomics -->
+        <section id="tokenomics" class="py-16 scroll-mt-32">
+          <div class="glass-section-card p-8 rounded-2xl backdrop-blur-2xl bg-white/[0.03] 
+                      hover:bg-white/[0.05] transition-all duration-500 border border-white/10">
+            <div class="flex items-center gap-4 mb-8">
+              <div class="p-3 rounded-xl bg-violet-500/10">
+                <Coins class="w-8 h-8 text-violet-400" />
               </div>
-              <div class="space-y-6">
-                <div class="bg-black/20 p-6 rounded-lg">
-                  <h5 class="text-lg font-display-semibold text-violet-200 mb-3">BlockChain</h5>
-                  <p class="text-gray-300">
-                    D4L is engineered on Base, an Ethereum Layer-2 scaling solution, harnessing the ERC-20 standard 
-                    for the $D4L token.
-                  </p>
-                </div>
-                <div class="bg-black/20 p-6 rounded-lg">
-                  <h5 class="text-lg font-display-semibold text-violet-200 mb-3">The Code</h5>
-                  <p class="text-gray-300">
-                    D4L runs on a slick stack of modular smart contracts, each a cog in a machine built for chaos and control:
-                  </p>
-                  <ul class="mt-4 space-y-2 text-gray-300">
-                    <li class="flex items-center gap-2">
-                      <div class="w-2 h-2 rounded-full bg-violet-400"></div>
-                      D4LController
+              <h2 class="text-4xl font-display-semibold bg-gradient-to-r from-violet-400 to-violet-600 
+                         bg-clip-text text-transparent">
+                4. Tokenomics
+              </h2>
+            </div>
+            <div class="prose prose-lg prose-invert max-w-none space-y-6">
+              <h3 class="text-2xl text-violet-400">Token Distribution</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white/5 p-6 rounded-xl">
+                  <h4 class="text-xl text-violet-300 mb-4">Initial Supply</h4>
+                  <ul class="list-none space-y-3">
+                    <li class="flex justify-between">
+                      <span>Community Pool</span>
+                      <span class="text-violet-400">25%</span>
                     </li>
-                    <li class="flex items-center gap-2">
-                      <div class="w-2 h-2 rounded-full bg-violet-400"></div>
-                      SecurityModule
+                    <li class="flex justify-between">
+                      <span>Team & Development</span>
+                      <span class="text-violet-400">20%</span>
                     </li>
-                    <li class="flex items-center gap-2">
-                      <div class="w-2 h-2 rounded-full bg-violet-400"></div>
-                      LiquidityModule
+                    <li class="flex justify-between">
+                      <span>DEX Liquidity</span>
+                      <span class="text-violet-400">30%</span>
+                    </li>
+                    <li class="flex justify-between">
+                      <span>Marketing</span>
+                      <span class="text-violet-400">10%</span>
+                    </li>
+                    <li class="flex justify-between">
+                      <span>CEX Liquidity</span>
+                      <span class="text-violet-400">15%</span>
                     </li>
                   </ul>
                 </div>
-              </div>
-            </div>
-
-            <!-- D4L Token Card -->
-            <div class="bg-white/[0.02] p-8 rounded-xl border border-white/5 hover:bg-white/[0.04] 
-                        transition-all duration-300 hover:transform hover:-translate-y-1">
-              <div class="flex items-center gap-3 mb-6">
-                <div class="p-2 rounded-lg bg-violet-500/10">
-                  <Coins class="w-6 h-6 text-violet-300" />
-                </div>
-                <h4 class="text-xl font-display-semibold text-violet-300">D4L Token</h4>
-              </div>
-              <div class="bg-black/20 p-6 rounded-lg mb-6">
-                <p class="text-gray-300">1 Billion total supply—your golden ticket to the D4L arena.</p>
-              </div>
-              <h5 class="text-lg font-display-semibold text-violet-200 mb-4">Token Distribution</h5>
-              <div class="space-y-3">
-                <div class="flex items-center justify-between p-3 bg-violet-500/5 rounded-lg">
-                  <span class="text-violet-200">DEX Liquidity Pool</span>
-                  <span class="text-violet-300 font-semibold">30%</span>
-                </div>
-                <div class="flex items-center justify-between p-3 bg-violet-500/5 rounded-lg">
-                  <span class="text-violet-200">Community/Ecosystem</span>
-                  <span class="text-violet-300 font-semibold">25%</span>
-                </div>
-                <div class="flex items-center justify-between p-3 bg-violet-500/5 rounded-lg">
-                  <span class="text-violet-200">Team (Locked)</span>
-                  <span class="text-violet-300 font-semibold">20%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Tokenomics -->
-    <section id="tokenomics" class="py-16 relative">
-      <div class="container mx-auto px-4">
-        <div class="glass-section-card p-8 rounded-2xl backdrop-blur-2xl">
-          <div class="flex items-center gap-4 mb-8">
-            <Coins class="w-8 h-8 text-violet-400" />
-            <h2 class="text-4xl font-bold bg-gradient-to-r from-violet-400 to-violet-600 bg-clip-text text-transparent">
-              4. Tokenomics & Allocation
-            </h2>
-          </div>
-          <div class="glass-card p-8">
-            <p class="text-xl mb-6">D4L Token: 1 Billion total supply—your golden ticket to the D4L arena.</p>
-            <div class="grid md:grid-cols-2 gap-8">
-              <div class="glass-inner-card p-6">
-                <h4 class="text-xl font-display-semibold text-violet-300 mb-4">Token Allocation</h4>
-                <ul class="space-y-3">
-                  <li class="flex items-center justify-between">
-                    <span>DEX Liquidity Pool</span>
-                    <span class="text-violet-300">30%</span>
-                  </li>
-                  <li class="flex items-center justify-between">
-                    <span>Community/Ecosystem</span>
-                    <span class="text-violet-300">25%</span>
-                  </li>
-                  <li class="flex items-center justify-between">
-                    <span>Team</span>
-                    <span class="text-violet-300">20%</span>
-                  </li>
-                  <li class="flex items-center justify-between">
-                    <span>D4L Treasury</span>
-                    <span class="text-violet-300">10%</span>
-                  </li>
-                  <li class="flex items-center justify-between">
-                    <span>Marketing</span>
-                    <span class="text-violet-300">10%</span>
-                  </li>
-                  <li class="flex items-center justify-between">
-                    <span>CEX Liquidity</span>
-                    <span class="text-violet-300">5%</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pre-Sale Structure & Roadmap -->
-    <section id="presale" class="py-16 relative">
-      <div class="container mx-auto px-4">
-        <div class="glass-section-card p-8 rounded-2xl backdrop-blur-2xl">
-          <div class="flex items-center gap-4 mb-8">
-            <Calendar class="w-8 h-8 text-violet-400" />
-            <h2 class="text-4xl font-bold bg-gradient-to-r from-violet-400 to-violet-600 bg-clip-text text-transparent">
-              6. Pre-Sale Structure & Roadmap
-            </h2>
-          </div>
-          <div class="prose prose-lg prose-invert max-w-none">
-            <h3 class="text-2xl font-display-semibold text-violet-300">Pre-Sale (7 Stages)</h3>
-            <ul class="list-disc pl-5 space-y-2">
-              <li>Dutch Auction: Whitelist only—lowest price per D4L, lock-up period, and a nice bonus stack to kick things off right.</li>
-              <li>Community Sale: Whitelist or KYC crew—sweet entry price, moderate bonuses for the early faithful.</li>
-              <li>Public Rounds (3-6): Open to all—price climbs as those in the know pile in, market vibes set the pace.</li>
-              <li>Bonus Finale: Last chance for extra D4L heat—special perks for the closers.</li>
-            </ul>
-
-            <h3 class="text-2xl font-display-semibold text-violet-300 mt-8">Use of Funds</h3>
-            <p>The pre-sale proceeds will be allocated as follows:</p>
-            <ul class="list-disc pl-5 space-y-2">
-              <li>35% Development: Smart contract development, UI/UX, infrastructure</li>
-              <li>20% Security & Audits: Third-party audits, bug bounties</li>
-              <li>20% Liquidity: DEX liquidity provision</li>
-              <li>15% Marketing: Community growth, promotional activities</li>
-              <li>10% Community Growth: Incentives and rewards</li>
-            </ul>
-
-            <h3 class="text-2xl font-display-semibold text-violet-300 mt-8">Q2 2025 Roadmap Highlights</h3>
-            <ul class="list-disc pl-5 space-y-2">
-              <li>Whitepaper release and pre-sale launch</li>
-              <li>DEX launch with HydraCurve implementation</li>
-              <li>BonkWars beta release</li>
-              <li>Core development team expansion</li>
-              <li>Security audits and formal verification</li>
-              <li>Staking mechanism activation</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Governance -->
-    <section id="governance" class="py-16 relative">
-      <div class="container mx-auto px-4">
-        <div class="glass-section-card p-8 rounded-2xl backdrop-blur-2xl">
-          <div class="flex items-center gap-4 mb-8">
-            <Users class="w-8 h-8 text-violet-400" />
-            <h2 class="text-4xl font-bold bg-gradient-to-r from-violet-400 to-violet-600 bg-clip-text text-transparent">
-              6. Governance
-            </h2>
-          </div>
-          <div class="glass-card p-8">
-            <div class="grid md:grid-cols-2 gap-8">
-              <div>
-                <div class="flex items-center gap-3 mb-4">
-                  <Target class="w-6 h-6 text-violet-300" />
-                  <h4 class="text-xl font-display-semibold text-violet-300">DAO Structure</h4>
-                </div>
-                <div class="space-y-4">
-                  <p>D4L operates as a Decentralized Autonomous Organization (DAO), where token holders have direct influence over the platform's evolution.</p>
-                  <ul class="space-y-2">
-                    <li>• Voting power proportional to D4L token holdings</li>
-                    <li>• Proposal submission requires minimum 100,000 D4L tokens</li>
-                    <li>• 72-hour voting periods for standard proposals</li>
-                    <li>• Emergency proposals handled by multi-sig council</li>
+                <div class="bg-white/5 p-6 rounded-xl">
+                  <h4 class="text-xl text-violet-300 mb-4">Vesting Schedule</h4>
+                  <ul class="list-disc pl-6 space-y-2">
+                    <li>Team tokens: 2-year linear vesting</li>
+                    <li>Advisors: 18-month linear vesting</li>
+                    <li>Community rewards: Released per milestone</li>
+                    <li>Liquidity: Locked for minimum 1 year</li>
                   </ul>
                 </div>
               </div>
-              <div>
-                <div class="flex items-center gap-3 mb-4">
-                  <Shield class="w-6 h-6 text-violet-300" />
-                  <h4 class="text-xl font-display-semibold text-violet-300">Voting Mechanisms</h4>
+
+              <h3 class="text-2xl text-violet-400 mt-12">Token Utility</h3>
+              <ul class="list-disc pl-6 space-y-2">
+                <li>Governance rights in the D4L DAO</li>
+                <li>Platform fee discounts</li>
+                <li>Access to premium features</li>
+                <li>Staking rewards</li>
+                <li>Liquidity mining incentives</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Technology -->
+        <section id="technology" class="py-16 scroll-mt-32">
+          <div class="glass-section-card p-8 rounded-2xl backdrop-blur-2xl bg-white/[0.03] 
+                      hover:bg-white/[0.05] transition-all duration-500 border border-white/10">
+            <div class="flex items-center gap-4 mb-8">
+              <div class="p-3 rounded-xl bg-violet-500/10">
+                <Cpu class="w-8 h-8 text-violet-400" />
+              </div>
+              <h2 class="text-4xl font-display-semibold bg-gradient-to-r from-violet-400 to-violet-600 
+                         bg-clip-text text-transparent">
+                5. Technology Stack
+              </h2>
+            </div>
+            <div class="prose prose-lg prose-invert max-w-none space-y-6">
+              <h3 class="text-2xl text-violet-400">HydraCurve™ AMM</h3>
+              <p>
+                Our proprietary automated market maker combines three mathematical functions:
+              </p>
+              <div class="bg-white/5 p-6 rounded-xl space-y-4">
+                <div>
+                  <h4 class="text-lg text-violet-300">Sigmoid Component</h4>
+                  <p class="text-sm">Optimizes liquidity concentration around the current price</p>
                 </div>
-                <div class="space-y-4">
-                  <p><strong>Key Voting Areas:</strong></p>
-                  <ul class="space-y-2">
-                    <li>• Protocol parameter adjustments</li>
-                    <li>• Fee structure modifications</li>
-                    <li>• New feature implementations</li>
-                    <li>• Treasury fund allocations</li>
-                    <li>• Partnership approvals</li>
+                <div>
+                  <h4 class="text-lg text-violet-300">Gaussian Component</h4>
+                  <p class="text-sm">Ensures smooth price transitions and reduced slippage</p>
+                </div>
+                <div>
+                  <h4 class="text-lg text-violet-300">Rational Component</h4>
+                  <p class="text-sm">Manages tail behavior for extreme price movements</p>
+                </div>
+              </div>
+
+              <h3 class="text-2xl text-violet-400 mt-12">Security Features</h3>
+              <ul class="list-disc pl-6 space-y-2">
+                <li>Multi-signature governance</li>
+                <li>Time-locked upgrades</li>
+                <li>Automated audit tools</li>
+                <li>Bug bounty program</li>
+                <li>Insurance fund</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Roadmap -->
+        <section id="roadmap" class="py-16 scroll-mt-32">
+          <div class="glass-section-card p-8 rounded-2xl backdrop-blur-2xl bg-white/[0.03] 
+                      hover:bg-white/[0.05] transition-all duration-500 border border-white/10">
+            <div class="flex items-center gap-4 mb-8">
+              <div class="p-3 rounded-xl bg-violet-500/10">
+                <Map class="w-8 h-8 text-violet-400" />
+              </div>
+              <h2 class="text-4xl font-display-semibold bg-gradient-to-r from-violet-400 to-violet-600 
+                         bg-clip-text text-transparent">
+                6. Roadmap
+              </h2>
+            </div>
+            <div class="prose prose-lg prose-invert max-w-none space-y-6">
+              <div class="space-y-12">
+                <div class="relative pl-8 border-l-2 border-violet-500/30">
+                  <div class="absolute w-4 h-4 bg-violet-500 rounded-full -left-[9px] top-0"></div>
+                  <h3 class="text-2xl text-violet-400">Q2 2024 - Launch Phase</h3>
+                  <ul class="list-disc pl-6 space-y-2 mt-4">
+                    <li>Token launch on Base</li>
+                    <li>HydraCurve™ AMM deployment</li>
+                    <li>Initial DEX offering</li>
+                    <li>Community building initiatives</li>
+                  </ul>
+                </div>
+
+                <div class="relative pl-8 border-l-2 border-violet-500/30">
+                  <div class="absolute w-4 h-4 bg-violet-500 rounded-full -left-[9px] top-0"></div>
+                  <h3 class="text-2xl text-violet-400">Q3 2024 - Expansion Phase</h3>
+                  <ul class="list-disc pl-6 space-y-2 mt-4">
+                    <li>Cross-chain integration</li>
+                    <li>Advanced trading features</li>
+                    <li>Mobile app launch</li>
+                    <li>Strategic partnerships</li>
+                  </ul>
+                </div>
+
+                <div class="relative pl-8 border-l-2 border-violet-500/30">
+                  <div class="absolute w-4 h-4 bg-violet-500 rounded-full -left-[9px] top-0"></div>
+                  <h3 class="text-2xl text-violet-400">Q4 2024 - Maturity Phase</h3>
+                  <ul class="list-disc pl-6 space-y-2 mt-4">
+                    <li>DAO governance implementation</li>
+                    <li>Institutional features</li>
+                    <li>Enhanced security measures</li>
+                    <li>Global expansion</li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- Risk Management -->
-    <section id="risk" class="py-16 relative">
-      <div class="container mx-auto px-4">
-        <div class="glass-section-card p-8 rounded-2xl backdrop-blur-2xl">
-          <div class="flex items-center gap-4 mb-8">
-            <Shield class="w-8 h-8 text-violet-400" />
-            <h2 class="text-4xl font-bold bg-gradient-to-r from-violet-400 to-violet-600 bg-clip-text text-transparent">
-              7. Risk Management
-            </h2>
-          </div>
-          <div class="glass-card p-8">
-            <div class="grid md:grid-cols-2 gap-8">
-              <div class="glass-inner-card p-6">
-                <h4 class="text-xl font-display-semibold text-violet-300 mb-4">Security Measures</h4>
-                <ul class="space-y-3">
-                  <li>• Multi-layered smart contract security</li>
-                  <li>• Regular third-party audits</li>
-                  <li>• Bug bounty program</li>
-                  <li>• Emergency shutdown mechanism</li>
-                  <li>• Real-time monitoring systems</li>
-                </ul>
+        <!-- Security Section -->
+        <section id="security" class="py-16 scroll-mt-32">
+          <div class="glass-section-card p-8 rounded-2xl backdrop-blur-2xl bg-white/[0.03] hover:bg-white/[0.05] transition-all duration-500 border border-white/10">
+            <div class="flex items-center gap-4 mb-8">
+              <div class="p-3 rounded-xl bg-violet-500/10">
+                <Shield class="w-8 h-8 text-violet-400" />
               </div>
-              <div class="glass-inner-card p-6">
-                <h4 class="text-xl font-display-semibold text-violet-300 mb-4">Insurance Protocol</h4>
-                <ul class="space-y-3">
-                  <li>• Coverage for smart contract risks</li>
-                  <li>• Liquidity protection</li>
-                  <li>• Staking insurance options</li>
-                  <li>• Cross-chain bridge protection</li>
-                </ul>
-              </div>
+              <h2 class="text-4xl font-display-semibold bg-gradient-to-r from-violet-400 to-violet-600 bg-clip-text text-transparent">
+                7. Security
+              </h2>
+            </div>
+            <div class="prose prose-lg prose-invert max-w-none space-y-6">
+              <p>
+                Security is at the core of D4L's infrastructure, implementing multiple layers of protection to ensure user assets and platform integrity.
+              </p>
+              <h3 class="text-2xl text-violet-400">Security Measures</h3>
+              <ul class="list-disc pl-6 space-y-2">
+                <li>Multi-signature wallets for protocol management</li>
+                <li>Regular smart contract audits</li>
+                <li>Real-time monitoring systems</li>
+                <li>Automated threat detection</li>
+                <li>Cold storage for reserve funds</li>
+              </ul>
+
+              <h3 class="text-2xl text-violet-400">Access Control</h3>
+              <ul class="list-disc pl-6 space-y-2">
+                <li>Role-based access control (RBAC)</li>
+                <li>Time-locked transactions</li>
+                <li>Multi-factor authentication</li>
+                <li>Hardware security modules (HSM)</li>
+              </ul>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- Community & Marketing -->
-    <section id="community" class="py-16 relative">
-      <div class="container mx-auto px-4">
-        <div class="glass-section-card p-8 rounded-2xl backdrop-blur-2xl">
-          <div class="flex items-center gap-4 mb-8">
-            <Users class="w-8 h-8 text-violet-400" />
-            <h2 class="text-4xl font-bold bg-gradient-to-r from-violet-400 to-violet-600 bg-clip-text text-transparent">
-              8. Community & Marketing
-            </h2>
-          </div>
-          <div class="glass-card p-8">
-            <div class="space-y-8">
-              <div class="glass-inner-card p-6">
-                <h4 class="text-xl font-display-semibold text-violet-300 mb-4">Community Building</h4>
-                <div class="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <p class="font-display-semibold text-violet-300 mb-2">Social Engagement</p>
-                    <ul class="space-y-2">
-                      <li>• Discord community hub</li>
-                      <li>• Twitter/X presence</li>
-                      <li>• Telegram groups</li>
-                      <li>• Reddit discussions</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <p class="font-display-semibold text-violet-300 mb-2">Educational Initiatives</p>
-                    <ul class="space-y-2">
-                      <li>• D4L Academy</li>
-                      <li>• Trading workshops</li>
-                      <li>• Technical documentation</li>
-                      <li>• Video tutorials</li>
-                    </ul>
-                  </div>
-                </div>
+        <!-- Risk Management Section -->
+        <section id="risk" class="py-16 scroll-mt-32">
+          <div class="glass-section-card p-8 rounded-2xl backdrop-blur-2xl bg-white/[0.03] hover:bg-white/[0.05] transition-all duration-500 border border-white/10">
+            <div class="flex items-center gap-4 mb-8">
+              <div class="p-3 rounded-xl bg-violet-500/10">
+                <Target class="w-8 h-8 text-violet-400" />
               </div>
+              <h2 class="text-4xl font-display-semibold bg-gradient-to-r from-violet-400 to-violet-600 bg-clip-text text-transparent">
+                8. Risk Management
+              </h2>
+            </div>
+            <div class="prose prose-lg prose-invert max-w-none space-y-6">
+              <p>
+                Our comprehensive risk management framework ensures platform stability and user protection through multiple layers of security.
+              </p>
+              <h3 class="text-2xl text-violet-400">Risk Mitigation Strategies</h3>
+              <ul class="list-disc pl-6 space-y-2">
+                <li>Circuit breakers for market volatility</li>
+                <li>Insurance fund allocation</li>
+                <li>Liquidity risk monitoring</li>
+                <li>Position limits and controls</li>
+                <li>Automated risk assessment</li>
+              </ul>
+
+              <h3 class="text-2xl text-violet-400">Emergency Procedures</h3>
+              <ul class="list-disc pl-6 space-y-2">
+                <li>Emergency shutdown protocol</li>
+                <li>Crisis management team</li>
+                <li>Incident response plan</li>
+                <li>User fund protection measures</li>
+              </ul>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- Legal & Compliance -->
-    <section id="legal" class="py-16 relative">
-      <div class="container mx-auto px-4">
-        <div class="glass-section-card p-8 rounded-2xl backdrop-blur-2xl">
-          <div class="flex items-center gap-4 mb-8">
-            <Shield class="w-8 h-8 text-violet-400" />
-            <h2 class="text-4xl font-bold bg-gradient-to-r from-violet-400 to-violet-600 bg-clip-text text-transparent">
-              9. Legal & Compliance
-            </h2>
-          </div>
-          <div class="glass-card p-8">
-            <div class="grid md:grid-cols-2 gap-8">
-              <div>
-                <div class="flex items-center gap-3 mb-4">
-                  <Target class="w-6 h-6 text-violet-300" />
-                  <h4 class="text-xl font-display-semibold text-violet-300">Regulatory Framework</h4>
-                </div>
-                <div class="space-y-4">
-                  <p>D4L is committed to operating within regulatory guidelines while maintaining decentralization principles:</p>
-                  <ul class="space-y-2">
-                    <li>• Compliance with relevant DeFi regulations</li>
-                    <li>• KYC/AML procedures where required</li>
-                    <li>• Regular legal consultations</li>
-                    <li>• Transparent reporting mechanisms</li>
-                  </ul>
-                </div>
+        <!-- Community & Governance Section -->
+        <section id="community" class="py-16 scroll-mt-32">
+          <div class="glass-section-card p-8 rounded-2xl backdrop-blur-2xl bg-white/[0.03] hover:bg-white/[0.05] transition-all duration-500 border border-white/10">
+            <div class="flex items-center gap-4 mb-8">
+              <div class="p-3 rounded-xl bg-violet-500/10">
+                <Users class="w-8 h-8 text-violet-400" />
               </div>
-              <div>
-                <div class="flex items-center gap-3 mb-4">
-                  <Shield class="w-6 h-6 text-violet-300" />
-                  <h4 class="text-xl font-display-semibold text-violet-300">Jurisdictional Approach</h4>
-                </div>
-                <div class="space-y-4">
-                  <ul class="space-y-2">
-                    <li>• Global accessibility focus</li>
-                    <li>• Region-specific compliance</li>
-                    <li>• Regular policy updates</li>
-                    <li>• Community governance alignment</li>
-                  </ul>
-                </div>
-              </div>
+              <h2 class="text-4xl font-display-semibold bg-gradient-to-r from-violet-400 to-violet-600 bg-clip-text text-transparent">
+                9. Community & Governance
+              </h2>
+            </div>
+            <div class="prose prose-lg prose-invert max-w-none space-y-6">
+              <p>
+                The D4L ecosystem is built on strong community participation and decentralized governance principles.
+              </p>
+              <h3 class="text-2xl text-violet-400">Community Engagement</h3>
+              <ul class="list-disc pl-6 space-y-2">
+                <li>Ambassador program</li>
+                <li>Developer grants</li>
+                <li>Educational resources</li>
+                <li>Community events</li>
+              </ul>
+
+              <h3 class="text-2xl text-violet-400">Governance Framework</h3>
+              <ul class="list-disc pl-6 space-y-2">
+                <li>Token-based voting rights</li>
+                <li>Proposal submission system</li>
+                <li>Community-driven decisions</li>
+                <li>Treasury management</li>
+              </ul>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="py-12 mt-16 border-t border-white/10">
-      <div class="container mx-auto px-4 text-center">
-        <p class="text-gray-400">© 2024 D4L. All rights reserved.</p>
+        <!-- Legal & Compliance Section -->
+        <section id="legal" class="py-16 scroll-mt-32">
+          <div class="glass-section-card p-8 rounded-2xl backdrop-blur-2xl bg-white/[0.03] hover:bg-white/[0.05] transition-all duration-500 border border-white/10">
+            <div class="flex items-center gap-4 mb-8">
+              <div class="p-3 rounded-xl bg-violet-500/10">
+                <FileText class="w-8 h-8 text-violet-400" />
+              </div>
+              <h2 class="text-4xl font-display-semibold bg-gradient-to-r from-violet-400 to-violet-600 bg-clip-text text-transparent">
+                10. Legal & Compliance
+              </h2>
+            </div>
+            <div class="prose prose-lg prose-invert max-w-none space-y-6">
+              <p>
+                D4L maintains strict adherence to regulatory requirements and implements comprehensive compliance measures.
+              </p>
+              <h3 class="text-2xl text-violet-400">Regulatory Compliance</h3>
+              <ul class="list-disc pl-6 space-y-2">
+                <li>KYC/AML procedures</li>
+                <li>Regulatory reporting</li>
+                <li>License maintenance</li>
+                <li>Privacy protection</li>
+              </ul>
+
+              <h3 class="text-2xl text-violet-400">Legal Framework</h3>
+              <ul class="list-disc pl-6 space-y-2">
+                <li>Terms of service</li>
+                <li>User agreements</li>
+                <li>Jurisdiction compliance</li>
+                <li>Legal partnerships</li>
+              </ul>
+            </div>
+          </div>
+        </section>
       </div>
-    </footer>
+    </div>
   </main>
 </template>
 
 <style scoped>
-.bg-background {
-  background-image: radial-gradient(circle at 50% 50%, rgba(109, 40, 217, 0.1) 0%, transparent 100%),
-                    linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.95));
-}
-
 .glass-hero-card {
-  background: rgba(109, 40, 217, 0.05);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(109, 40, 217, 0.1);
-  box-shadow: 0 8px 32px rgba(109, 40, 217, 0.1);
-}
-
-.glass-nav-container {
-  background: rgba(109, 40, 217, 0.05);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(109, 40, 217, 0.1);
-  box-shadow: 0 4px 24px rgba(109, 40, 217, 0.1);
-}
-
-.nav-item {
-  background: rgba(109, 40, 217, 0.03);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(109, 40, 217, 0.08);
-  transition: all 0.3s ease;
-}
-
-.nav-item:hover {
-  transform: translateY(-1px);
-  border-color: rgba(109, 40, 217, 0.2);
-  box-shadow: 0 4px 20px -5px rgba(109, 40, 217, 0.2);
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .glass-section-card {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(109, 40, 217, 0.1);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-}
-
-.glass-section-card:hover {
-  background: rgba(255, 255, 255, 0.03);
-  border-color: rgba(109, 40, 217, 0.15);
-  transform: translateY(-2px);
-}
-
-/* Typography enhancements */
-.prose strong {
-  @apply text-violet-300;
-}
-
-.prose h3, .prose h4 {
-  @apply text-violet-300 font-display-semibold;
-}
-
-.prose p {
-  @apply text-gray-300;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
 }
 
 /* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 120px;
 }
 
-.nav-item span {
-  font-family: 'Obviously-Regular', sans-serif;
+/* Custom scrollbar for the navigation */
+.overflow-x-auto {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(139, 92, 246, 0.5) transparent;
 }
 
-.prose h4 {
-  font-family: 'Obviously-Semibold', sans-serif;
+.overflow-x-auto::-webkit-scrollbar {
+  height: 6px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb {
+  background-color: rgba(139, 92, 246, 0.5);
+  border-radius: 20px;
+}
+
+/* Add animation for roadmap timeline */
+.border-l-2 {
+  transition: border-color 0.3s ease;
+}
+
+.border-l-2:hover {
+  border-color: theme('colors.violet.500');
+}
+
+/* Add hover effects for team cards */
+.bg-white\/5 {
+  transition: all 0.3s ease;
+}
+
+.bg-white\/5:hover {
+  transform: translateY(-4px);
+  background-color: rgb(255 255 255 / 0.1); /* Fixed syntax for white with opacity */
+}
+
+.group:hover .opacity-20 {
+  opacity: 0.6;
 }
 </style>
