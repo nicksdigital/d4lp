@@ -3,12 +3,12 @@
 @import 'tailwindcss/utilities';
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* Preload fonts */
+/* Preload fonts - Updated paths */
 @font-face {
   font-family: "Obviously-Regular";
-  src: url('@/assets/fonts/Obviously-Regular.woff2') format('woff2'),
-       url('@/assets/fonts/Obviously-Regular.woff') format('woff'),
-       url('@/assets/fonts/Obviously-Regular.ttf') format('truetype');
+  src: url('/fonts/Obviously-Regular.woff2') format('woff2'),
+       url('/fonts/Obviously-Regular.woff') format('woff'),
+       url('/fonts/Obviously-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -16,9 +16,9 @@
 
 @font-face {
   font-family: "Obviously-Thin";
-  src: url('@/assets/fonts/Obviously-Thin.woff2') format('woff2'),
-       url('@/assets/fonts/Obviously-Thin.woff') format('woff'),
-       url('@/assets/fonts/Obviously-Thin.ttf') format('truetype');
+  src: url('/fonts/Obviously-Thin.woff2') format('woff2'),
+       url('/fonts/Obviously-Thin.woff') format('woff'),
+       url('/fonts/Obviously-Thin.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -26,9 +26,9 @@
 
 @font-face {
   font-family: "Obviously-Semibold";
-  src: url('@/assets/fonts/Obviously-Semibold.woff2') format('woff2'),
-       url('@/assets/fonts/Obviously-Semibold.woff') format('woff'),
-       url('@/assets/fonts/Obviously-Semibold.ttf') format('truetype');
+  src: url('/fonts/Obviously-Semibold.woff2') format('woff2'),
+       url('/fonts/Obviously-Semibold.woff') format('woff'),
+       url('/fonts/Obviously-Semibold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
