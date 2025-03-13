@@ -74,8 +74,8 @@ const countdown = ref({
   SEC: "00"
 })
 
-// Set Auction Date
-const auctionDate = new Date("2025-03-21T00:00:00Z").getTime()
+// Set Auction Date to March 25, 2025
+const auctionDate = new Date(2025, 2, 25, 0, 0, 0, 0).getTime()
 
 const updateCountdown = () => {
   const now = new Date().getTime()
