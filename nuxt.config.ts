@@ -2,49 +2,75 @@
 export default defineNuxtConfig({
   app: {
     head: {
-      link: [
-        {
-          rel: 'preload',
-          as: 'font',
-          href: '/assets/fonts/Obviously-Regular.woff2',
-          type: 'font/woff2',
-          crossorigin: 'anonymous'
-        },
-        {
-          rel: 'preload',
-          as: 'font',
-          href: '/assets/fonts/Obviously-Semibold.woff2',
-          type: 'font/woff2',
-          crossorigin: 'anonymous'
-        },
-        {
-          rel: 'preload',
-          as: 'font',
-          href: '/assets/fonts/Obviously-Thin.woff2',
-          type: 'font/woff2',
-          crossorigin: 'anonymous'
+      link: [] // Remove the preload links since @nuxt/fonts will handle this
+    }
+  },
+  fonts: {
+    families: [
+      {
+        name: 'Obviously-Regular',
+        provider: 'local',
+        src: './public/fonts/Obviously-Regular.woff2',
+        weight: '400',
+        style: 'normal',
+      },
+      {
+        name: 'Obviously-Semibold',
+        provider: 'local',
+        src: './public/fonts/Obviously-Semibold.woff2',
+        weight: '600',
+        style: 'normal',
+      },
+      {
+        name: 'Obviously-Thin',
+        provider: 'local',
+        src: './public/fonts/Obviously-Thin.woff2',
+        weight: '100',
+        style: 'normal',
+      }
+    ],
+    defaults: {
+      provider: 'local',
+      fallbacks: ['system-ui', 'sans-serif'],
+    },
+    preload: true,
+  },
+  site: { indexable: false },
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@use "@/assets/css/_variables.scss" as *;'
         }
-      ]
+      }
     }
   },
   compatibilityDate: '2024-11-01',
   devtools: { enabled: false },
   modules: [
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/seo',
     '@hypernym/nuxt-gsap',
-    '@pinia/nuxt',
-    '@vueuse/nuxt'
+    'nuxt-og-image',
+    '@nuxt/fonts',
+    '@pinia/nuxt'
   ],
-  css: ['assets/css/main.css'],
+  css: ['~/assets/css/main.css'],
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
   gsap: {
     extraPlugins: {
       scrollTrigger: true
     }
   },
-  // Make sure the server listens on all interfaces
-  server: {
-    host: '0.0.0.0',
-    port: 3000
+  runtimeConfig: {
+    public: {
+      apiBase: process.env.API_BASE || 'http://0.0.0.0:3000/api'
+    }
   },
   // Add more specific configuration for development server
   nitro: {

@@ -32,10 +32,10 @@ const sections = [
     <div class="relative pt-[172px] pb-24 text-center">
       <div class="container mx-auto px-4">
         <div class="glass-hero-card p-12 rounded-2xl mb-12">
-          <h1 class="text-7xl font-super font-obviously bg-gradient-to-r from-violet-400 to-violet-600 bg-clip-text text-transparent">
+          <h1 class="text-7xl font-display-semibold bg-gradient-to-r from-violet-400 to-violet-600 bg-clip-text text-transparent">
             D4L Whitepaper
           </h1>
-          <p class="text-2xl text-violet-200/80 mt-6 max-w-2xl mx-auto font-thin font-obviously">
+          <p class="text-2xl text-violet-200/80 mt-6 max-w-2xl mx-auto font-display-thin">
             Risk It, Build It, Bank It
           </p>
 
@@ -71,10 +71,7 @@ const sections = [
                  :key="section"
                  :href="`#${section}`"
                  class="nav-item relative group">
-                <div class="absolute inset-0 bg-gradient-to-r from-violet-600/20 to-violet-500/20 rounded-xl 
-                            transform transition-all duration-300 scale-x-0 group-hover:scale-x-100 origin-left"></div>
-                <div class="absolute inset-0 bg-white/[0.03] rounded-xl"></div>
-                <span class="relative z-10 text-violet-200 group-hover:text-white transition-all duration-300 text-sm font-medium 
+                <span class="relative z-10 text-violet-200 group-hover:text-white transition-all duration-300 text-sm font-display-regular 
                            flex items-center justify-center py-3 px-4">
                   {{ section.replace('-', ' ').toUpperCase() }}
                 </span>
@@ -101,7 +98,7 @@ const sections = [
             </h2>
           </div>
           <div class="prose prose-lg prose-invert max-w-none space-y-6">
-            <p class="text-2xl font-light text-violet-200">Welcome to D4L: Ride the D4L Wave: Risk It, Build It, Bank It</p>
+            <p class="text-2xl font-display-light text-violet-200">Welcome to D4L: Ride the D4L Wave: Risk It, Build It, Bank It</p>
             <div class="bg-white/[0.02] p-6 rounded-xl border border-white/5">
               <p class="text-gray-300 leading-relaxed">
                 D4L isn't some boring platform—it's the beating heart of crypto, cultivating a lifestyle built for those who 
@@ -134,7 +131,7 @@ const sections = [
             <div class="glass-card p-8">
               <div class="flex items-center gap-3 mb-4">
                 <Lightbulb class="w-6 h-6 text-violet-300" />
-                <h4 class="text-xl font-bold text-violet-300">Meme Coin Launchpad</h4>
+                <h4 class="text-xl font-display-semibold text-violet-300">Meme Coin Launchpad</h4>
               </div>
               <div class="space-y-4">
                 <p><strong>What:</strong> Spin up your own meme coin with D4L's creator tools—customize it, secure it, launch it. Our verification system sniffs out scams, anti-bot features, plus no rug pulls to ruin the party.</p>
@@ -145,7 +142,7 @@ const sections = [
             <div class="glass-card p-8">
               <div class="flex items-center gap-3 mb-4">
                 <TrendingUp class="w-6 h-6 text-violet-300" />
-                <h4 class="text-xl font-bold text-violet-300">DEX: Powered by HydraCurve</h4>
+                <h4 class="text-xl font-display-semibold text-violet-300">DEX: Powered by HydraCurve</h4>
               </div>
               <div class="space-y-4">
                 <p><strong>What:</strong> Trade cross-chain with low slippage, backed by a 30% D4L liquidity pool that keeps the gears turning. Secure trading with built in liquidity, no more sketchy swaps—D4L's DEX is built for speed and stability.</p>
@@ -178,18 +175,18 @@ const sections = [
                 <div class="p-2 rounded-lg bg-violet-500/10">
                   <Shield class="w-6 h-6 text-violet-300" />
                 </div>
-                <h4 class="text-xl font-bold text-violet-300">Core Infrastructure</h4>
+                <h4 class="text-xl font-display-semibold text-violet-300">Core Infrastructure</h4>
               </div>
               <div class="space-y-6">
                 <div class="bg-black/20 p-6 rounded-lg">
-                  <h5 class="text-lg font-semibold text-violet-200 mb-3">BlockChain</h5>
+                  <h5 class="text-lg font-display-semibold text-violet-200 mb-3">BlockChain</h5>
                   <p class="text-gray-300">
                     D4L is engineered on Base, an Ethereum Layer-2 scaling solution, harnessing the ERC-20 standard 
                     for the $D4L token.
                   </p>
                 </div>
                 <div class="bg-black/20 p-6 rounded-lg">
-                  <h5 class="text-lg font-semibold text-violet-200 mb-3">The Code</h5>
+                  <h5 class="text-lg font-display-semibold text-violet-200 mb-3">The Code</h5>
                   <p class="text-gray-300">
                     D4L runs on a slick stack of modular smart contracts, each a cog in a machine built for chaos and control:
                   </p>
@@ -218,12 +215,12 @@ const sections = [
                 <div class="p-2 rounded-lg bg-violet-500/10">
                   <Coins class="w-6 h-6 text-violet-300" />
                 </div>
-                <h4 class="text-xl font-bold text-violet-300">D4L Token</h4>
+                <h4 class="text-xl font-display-semibold text-violet-300">D4L Token</h4>
               </div>
               <div class="bg-black/20 p-6 rounded-lg mb-6">
                 <p class="text-gray-300">1 Billion total supply—your golden ticket to the D4L arena.</p>
               </div>
-              <h5 class="text-lg font-semibold text-violet-200 mb-4">Token Distribution</h5>
+              <h5 class="text-lg font-display-semibold text-violet-200 mb-4">Token Distribution</h5>
               <div class="space-y-3">
                 <div class="flex items-center justify-between p-3 bg-violet-500/5 rounded-lg">
                   <span class="text-violet-200">DEX Liquidity Pool</span>
@@ -258,7 +255,7 @@ const sections = [
             <p class="text-xl mb-6">D4L Token: 1 Billion total supply—your golden ticket to the D4L arena.</p>
             <div class="grid md:grid-cols-2 gap-8">
               <div class="glass-inner-card p-6">
-                <h4 class="text-xl font-bold text-violet-300 mb-4">Token Allocation</h4>
+                <h4 class="text-xl font-display-semibold text-violet-300 mb-4">Token Allocation</h4>
                 <ul class="space-y-3">
                   <li class="flex items-center justify-between">
                     <span>DEX Liquidity Pool</span>
@@ -303,7 +300,7 @@ const sections = [
             </h2>
           </div>
           <div class="prose prose-lg prose-invert max-w-none">
-            <h3 class="text-2xl font-bold text-violet-300">Pre-Sale (7 Stages)</h3>
+            <h3 class="text-2xl font-display-semibold text-violet-300">Pre-Sale (7 Stages)</h3>
             <ul class="list-disc pl-5 space-y-2">
               <li>Dutch Auction: Whitelist only—lowest price per D4L, lock-up period, and a nice bonus stack to kick things off right.</li>
               <li>Community Sale: Whitelist or KYC crew—sweet entry price, moderate bonuses for the early faithful.</li>
@@ -311,7 +308,7 @@ const sections = [
               <li>Bonus Finale: Last chance for extra D4L heat—special perks for the closers.</li>
             </ul>
 
-            <h3 class="text-2xl font-bold text-violet-300 mt-8">Use of Funds</h3>
+            <h3 class="text-2xl font-display-semibold text-violet-300 mt-8">Use of Funds</h3>
             <p>The pre-sale proceeds will be allocated as follows:</p>
             <ul class="list-disc pl-5 space-y-2">
               <li>35% Development: Smart contract development, UI/UX, infrastructure</li>
@@ -321,7 +318,7 @@ const sections = [
               <li>10% Community Growth: Incentives and rewards</li>
             </ul>
 
-            <h3 class="text-2xl font-bold text-violet-300 mt-8">Q2 2025 Roadmap Highlights</h3>
+            <h3 class="text-2xl font-display-semibold text-violet-300 mt-8">Q2 2025 Roadmap Highlights</h3>
             <ul class="list-disc pl-5 space-y-2">
               <li>Whitepaper release and pre-sale launch</li>
               <li>DEX launch with HydraCurve implementation</li>
@@ -350,7 +347,7 @@ const sections = [
               <div>
                 <div class="flex items-center gap-3 mb-4">
                   <Target class="w-6 h-6 text-violet-300" />
-                  <h4 class="text-xl font-bold text-violet-300">DAO Structure</h4>
+                  <h4 class="text-xl font-display-semibold text-violet-300">DAO Structure</h4>
                 </div>
                 <div class="space-y-4">
                   <p>D4L operates as a Decentralized Autonomous Organization (DAO), where token holders have direct influence over the platform's evolution.</p>
@@ -365,7 +362,7 @@ const sections = [
               <div>
                 <div class="flex items-center gap-3 mb-4">
                   <Shield class="w-6 h-6 text-violet-300" />
-                  <h4 class="text-xl font-bold text-violet-300">Voting Mechanisms</h4>
+                  <h4 class="text-xl font-display-semibold text-violet-300">Voting Mechanisms</h4>
                 </div>
                 <div class="space-y-4">
                   <p><strong>Key Voting Areas:</strong></p>
@@ -397,7 +394,7 @@ const sections = [
           <div class="glass-card p-8">
             <div class="grid md:grid-cols-2 gap-8">
               <div class="glass-inner-card p-6">
-                <h4 class="text-xl font-bold text-violet-300 mb-4">Security Measures</h4>
+                <h4 class="text-xl font-display-semibold text-violet-300 mb-4">Security Measures</h4>
                 <ul class="space-y-3">
                   <li>• Multi-layered smart contract security</li>
                   <li>• Regular third-party audits</li>
@@ -407,7 +404,7 @@ const sections = [
                 </ul>
               </div>
               <div class="glass-inner-card p-6">
-                <h4 class="text-xl font-bold text-violet-300 mb-4">Insurance Protocol</h4>
+                <h4 class="text-xl font-display-semibold text-violet-300 mb-4">Insurance Protocol</h4>
                 <ul class="space-y-3">
                   <li>• Coverage for smart contract risks</li>
                   <li>• Liquidity protection</li>
@@ -434,10 +431,10 @@ const sections = [
           <div class="glass-card p-8">
             <div class="space-y-8">
               <div class="glass-inner-card p-6">
-                <h4 class="text-xl font-bold text-violet-300 mb-4">Community Building</h4>
+                <h4 class="text-xl font-display-semibold text-violet-300 mb-4">Community Building</h4>
                 <div class="grid md:grid-cols-2 gap-6">
                   <div>
-                    <p class="font-bold text-violet-300 mb-2">Social Engagement</p>
+                    <p class="font-display-semibold text-violet-300 mb-2">Social Engagement</p>
                     <ul class="space-y-2">
                       <li>• Discord community hub</li>
                       <li>• Twitter/X presence</li>
@@ -446,7 +443,7 @@ const sections = [
                     </ul>
                   </div>
                   <div>
-                    <p class="font-bold text-violet-300 mb-2">Educational Initiatives</p>
+                    <p class="font-display-semibold text-violet-300 mb-2">Educational Initiatives</p>
                     <ul class="space-y-2">
                       <li>• D4L Academy</li>
                       <li>• Trading workshops</li>
@@ -477,7 +474,7 @@ const sections = [
               <div>
                 <div class="flex items-center gap-3 mb-4">
                   <Target class="w-6 h-6 text-violet-300" />
-                  <h4 class="text-xl font-bold text-violet-300">Regulatory Framework</h4>
+                  <h4 class="text-xl font-display-semibold text-violet-300">Regulatory Framework</h4>
                 </div>
                 <div class="space-y-4">
                   <p>D4L is committed to operating within regulatory guidelines while maintaining decentralization principles:</p>
@@ -492,7 +489,7 @@ const sections = [
               <div>
                 <div class="flex items-center gap-3 mb-4">
                   <Shield class="w-6 h-6 text-violet-300" />
-                  <h4 class="text-xl font-bold text-violet-300">Jurisdictional Approach</h4>
+                  <h4 class="text-xl font-display-semibold text-violet-300">Jurisdictional Approach</h4>
                 </div>
                 <div class="space-y-4">
                   <ul class="space-y-2">
@@ -570,7 +567,7 @@ const sections = [
 }
 
 .prose h3, .prose h4 {
-  @apply text-violet-300 font-semibold;
+  @apply text-violet-300 font-display-semibold;
 }
 
 .prose p {
@@ -581,5 +578,13 @@ const sections = [
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 120px;
+}
+
+.nav-item span {
+  font-family: 'Obviously-Regular', sans-serif;
+}
+
+.prose h4 {
+  font-family: 'Obviously-Semibold', sans-serif;
 }
 </style>

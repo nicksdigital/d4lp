@@ -42,7 +42,7 @@ onMounted(() => {
   <nav class="fixed top-0 w-full z-50 bg-black/95 backdrop-blur-xl border-b border-white/20 shadow-lg transition-all duration-300">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
       <!-- Enhanced Logo with Animation and Glow -->
-      <NuxtLink to="#top" class="text-white text-xl font-obviously-semibold flex items-center space-x-3">
+      <NuxtLink to="#top" class="text-white text-xl font-display-semibold flex items-center space-x-3">
         <div class="logo-container w-12 h-12 relative flex items-center justify-center overflow-visible">
           <div class="absolute inset-0 logo-glow rounded-full"></div>
           <div class="absolute inset-0 logo-metallic rounded-full"></div>
@@ -68,7 +68,7 @@ onMounted(() => {
           :to="item.to" 
           :class="[
             'nav-link group flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-300 hover:bg-white/10',
-            'font-obviously-regular',
+            'font-display-regular',
             isActive(item.to) ? 'text-violet-400 bg-white/5' : 'text-white'
           ]"
         >
@@ -86,7 +86,7 @@ onMounted(() => {
       <!-- LOGIN BUTTON -->
       <NuxtLink
         to="#login"
-        class="nav-button bg-violet-600 hover:bg-violet-700 text-white px-6 py-2 rounded-lg flex items-center space-x-2 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-violet-500/20 font-obviously font-semibold"
+        class="nav-button bg-violet-600 hover:bg-violet-700 text-white px-6 py-2 rounded-lg flex items-center space-x-2 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-violet-500/20 font-display font-semibold"
       >
         <LogIn class="w-5 h-5" />
         <span>Login</span>
@@ -108,7 +108,7 @@ onMounted(() => {
         :key="index"
         :to="item.to"
         :class="[
-          'py-2 px-6 flex items-center space-x-2 transition font-obviously font-thin',
+          'py-2 px-6 flex items-center space-x-2 transition font-display font-thin',
           isActive(item.to) ? 'bg-violet-500/20 text-violet-400' : 'hover:bg-violet-500/20'
         ]"
       >

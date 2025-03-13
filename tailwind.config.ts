@@ -63,18 +63,26 @@ export default {
         },
       },
       fontFamily: {
-        'obviously': ['Obviously-Thin', 'sans-serif'],
-        'obviously-regular': ['Obviously-Regular', 'sans-serif'],
-        'obviously-semibold': ['Obviously-Semibold', 'sans-serif'],
-        'obviously-compressed': ['Obviously Compressed', 'sans-serif'],
+        // Base font stack
+        'sans': ['Obviously-Regular', 'system-ui', 'sans-serif'],
+        // Weight-specific variants
+        'display': ['Obviously-Regular', 'Inter', 'system-ui', 'sans-serif'],
+        'display-thin': ['Obviously-Thin', 'Inter', 'system-ui', 'sans-serif'],
+        'display-regular': ['Obviously-Regular', 'Inter', 'system-ui', 'sans-serif'],
+        'display-semibold': ['Obviously-Semibold', 'Inter', 'system-ui', 'sans-serif'],
       },
       fontWeight: {
         'thin': '100',
+        'regular': '400',
         'medium': '500',
         'semibold': '600',
+        'bold': '700',
         'super': '800',
       }
     }
+  },
+  security: {
+    csrf: true
   },
   plugins: []
 } as Config

@@ -5,18 +5,18 @@
     :class="{ 'translate-y-0 opacity-100': isVisible, 'translate-y-20 opacity-0': !isVisible }"
   >
     <div class="flex items-start gap-3">
-      <div class="text-2xl animate-bounce">🤔</div>
+      <div class="text-2xl animate-bounce font-display-regular">🤔</div>
       <div>
-        <h3 class="font-obviously-semibold text-violet-300 mb-1">Why no fancy logos?</h3>
+        <h3 class="font-display-semibold text-violet-300 mb-1">Why no fancy logos?</h3>
         <p class="text-sm text-gray-300 leading-snug">
           We think our money is better spent building awesome tech than paying venues to talk about us! 
-          <span class="text-violet-400">Smart, right? 😎</span>
+          <span class="text-violet-400 font-display-regular">Smart, right? 😎</span>
         </p>
       </div>
     </div>
     <button 
       @click="dismiss"
-      class="absolute top-2 right-2 text-violet-400 hover:text-violet-200 text-sm"
+      class="absolute top-2 right-2 text-violet-400 hover:text-violet-200 text-sm font-display-regular"
     >
       ✕
     </button>

@@ -21,7 +21,7 @@
 
     <!-- ✨ Main Headline -->
     <div class="relative z-10 max-w-3xl mt-12">
-      <h1 class="text-5xl font-bold text-white">
+      <h1 class="text-5xl font-display-semibold text-white">
         Welcome to <span class="text-violet-500">D4L</span>
       </h1>
       <p class="mt-4 text-lg text-gray-300 leading-relaxed">
@@ -35,7 +35,7 @@
         <!-- CTA 1: Get Whitelisted -->
         <NuxtLink 
           to="/whitelist"
-          class="px-6 py-3 bg-gradient-to-r from-violet-600 to-purple-600 hover:scale-105 text-white font-semibold rounded-lg shadow-lg transition flex items-center gap-2"
+          class="px-6 py-3 bg-gradient-to-r from-violet-600 to-purple-600 hover:scale-105 text-white font-display-semibold rounded-lg shadow-lg transition flex items-center gap-2"
         >
           <UserPlus class="w-6 h-6" /> BE A VIP – Get Whitelisted
         </NuxtLink>

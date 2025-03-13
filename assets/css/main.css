@@ -3,12 +3,10 @@
 @import 'tailwindcss/utilities';
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* Preload fonts - Updated paths */
+/* Preload fonts - Using relative paths */
 @font-face {
   font-family: "Obviously-Regular";
-  src: url('/fonts/Obviously-Regular.woff2') format('woff2'),
-       url('/fonts/Obviously-Regular.woff') format('woff'),
-       url('/fonts/Obviously-Regular.ttf') format('truetype');
+  src: url('../fonts/Obviously-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -16,9 +14,7 @@
 
 @font-face {
   font-family: "Obviously-Thin";
-  src: url('/fonts/Obviously-Thin.woff2') format('woff2'),
-       url('/fonts/Obviously-Thin.woff') format('woff'),
-       url('/fonts/Obviously-Thin.ttf') format('truetype');
+  src: url('../fonts/Obviously-Thin.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -26,9 +22,7 @@
 
 @font-face {
   font-family: "Obviously-Semibold";
-  src: url('/fonts/Obviously-Semibold.woff2') format('woff2'),
-       url('/fonts/Obviously-Semibold.woff') format('woff'),
-       url('/fonts/Obviously-Semibold.ttf') format('truetype');
+  src: url('../fonts/Obviously-Semibold.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -36,165 +30,77 @@
 
 @layer base {
   html {
+    @apply font-regular antialiased;
     scroll-behavior: smooth;
-    font-family: "Obviously-Regular", system-ui, sans-serif;
   }
   
   body {
-    font-family: "Obviously-Regular", sans-serif;
-    @apply bg-background antialiased;
+    @apply font-regular bg-background text-text antialiased;
   }
 
-  /* Titles */
+  /* Headings */
   h1 {
-    @apply font-obviously-semibold font-[800] leading-tight mb-8; /* Update to use Obviously-Semibold */
+    @apply font-display-semibold text-4xl leading-tight mb-8;
   }
 
   h2 {
-    @apply font-obviously-semibold font-[800] leading-tight mb-6 mt-12; /* Update to use Obviously-Semibold */
+    @apply font-display-semibold text-3xl leading-tight mb-6 mt-12;
   }
 
-  /* Subtitles */
   h3 {
-    @apply font-obviously-semibold font-semibold leading-snug mb-4 mt-8; /* Already using Semibold */
+    @apply font-display-semibold text-2xl leading-snug mb-4 mt-8;
   }
 
   h4 {
-    @apply font-obviously-semibold font-semibold leading-snug mb-3 mt-6; /* Already using Semibold */
+    @apply font-display-semibold text-xl leading-snug mb-3 mt-6;
   }
 
-  /* Text/Paragraphs - Updated to use Obviously-Regular */
+  /* Body text */
   p {
-    @apply font-obviously-regular font-normal leading-[1.8] mb-6 text-gray-200 text-lg;
+    @apply font-regular text-lg leading-[1.8] mb-6 text-gray-200;
   }
 
-  /* Update spacing between paragraphs and headings */
-  p + h1, p + h2 {
-    @apply mt-16;
+  /* Utility classes */
+  .title-hero {
+    @apply font-display-semibold text-5xl md:text-6xl leading-tight;
   }
 
-  p + h3, p + h4 {
-    @apply mt-12;
+  .title-section {
+    @apply font-display-semibold text-3xl md:text-4xl leading-tight;
   }
 
-  /* Lists */
-  ul, ol {
-    @apply mb-4 ml-4;
+  .title-subsection {
+    @apply font-display-semibold text-2xl md:text-3xl leading-snug;
   }
 
-  li {
-    @apply mb-2;
+  .text-body-large {
+    @apply font-display-regular text-xl leading-relaxed;
   }
 
-  /* Utility classes with improved spacing */
-  .title {
-    @apply font-obviously-semibold font-[800] leading-tight mb-8;
+  .text-body {
+    @apply font-regular text-lg leading-relaxed;
   }
 
-  .subtitle {
-    @apply font-obviously-semibold font-semibold leading-snug mb-4;
+  .text-body-small {
+    @apply font-regular text-base leading-relaxed;
   }
 
-  .body-text {
-    @apply font-obviously-regular font-normal leading-[1.8] mb-6 text-gray-200 text-lg;
-  }
-
-  .paragraph-title {
-    @apply font-thin leading-normal font-obviously mb-3 mt-6;
-  }
-
-  .text-content {
-    @apply space-y-6;
-  }
-
-  /* If you have any specific text content areas */
-  .content-area p {
-    @apply text-gray-200 leading-[1.8] text-lg font-obviously-regular font-normal;
+  .text-caption {
+    @apply font-display-thin text-sm leading-normal;
   }
 }
 
 @layer components {
-  /* Update section spacing */
-  .section-container {
-    @apply container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
-  }
-  
-  .section-title {
-    @apply text-4xl font-super font-obviously text-center mb-16;
+  .nav-link {
+    @apply font-display-regular text-base hover:text-white transition-colors;
   }
 
-  /* Content blocks with consistent spacing */
-  .content-block {
-    @apply mb-12 last:mb-0;
+  .button-primary {
+    @apply font-display-semibold text-base px-6 py-3 rounded-lg;
   }
 
-  /* Text content wrapper */
-  .text-content {
-    @apply space-y-4;
-  }
-
-  /* Spacing utilities */
-  .space-content {
-    @apply space-y-8;
-  }
-
-  .space-content-lg {
-    @apply space-y-12;
-  }
-
-  .space-content-xl {
-    @apply space-y-16;
-  }
-
-  .glass-effect {
-    @apply bg-white/10 backdrop-blur-md border border-white/20;
-  }
-
-  /* Add a new class for consistent title styling */
-  .title-super {
-    @apply font-super font-obviously leading-tight;
-  }
-
-  .title-semibold {
-    @apply font-semibold font-obviously leading-snug;
-  }
-
-  .text-body {
-    @apply font-thin font-obviously leading-relaxed;
-  }
-
-  .bg-background {
-      background-image: url('/bg1.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-  }
-
-  .text-text {
-      color: #e2e8f0;
-  }
-
-  .glass-nav {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: all 0.3s ease;
-  }
-
-  .nav-pill {
-    @apply px-3 py-2 rounded-lg text-center transition-all duration-300 hover:shadow-lg;
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-  }
-
-  .nav-pill:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 20px -5px rgba(251, 146, 60, 0.3);
-  }
-
-  .nav-pill:active {
-    transform: translateY(1px);
+  .button-secondary {
+    @apply font-display-regular text-base px-6 py-3 rounded-lg;
   }
 }
 
