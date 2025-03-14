@@ -25,9 +25,7 @@
         Welcome to <span class="text-violet-500">D4L</span>
       </h1>
       <p class="mt-4 text-lg text-gray-300 leading-relaxed">
-        The most innovative <span class="font-semibold text-violet-400">DeFi launchpad</span>, powered by  
-        <span class="font-semibold text-violet-400">HydraCurve™ AMM</span>, <span class="font-semibold text-violet-400">AI-driven risk management</span>,  
-        and <span class="font-semibold text-violet-400">NFT-backed liquidity.</span>
+        Where next-gen DEX meets meme battle arena—combining military-grade security with explosive gains to transform every move into victory. Risk it, build it, bank it.
       </p>
 
       <!-- 📢 Call-to-Action Buttons -->

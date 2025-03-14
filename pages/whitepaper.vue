@@ -147,15 +147,18 @@ onUnmounted(() => {
             </div>
             <div class="prose prose-lg prose-invert max-w-none space-y-6">
               <p>
-                D4L represents a paradigm shift in decentralized finance, combining advanced trading mechanisms
-                with user-centric design. Our platform integrates cutting-edge technologies including:
+                D4L represents a paradigm shift in decentralized finance, combining advanced trading mechanisms with user-centric design. Our ecosystem integrates:
               </p>
               <ul class="list-disc pl-6 space-y-2">
-                <li>HydraCurve™ AMM for optimal liquidity management</li>
-                <li>AI-driven risk assessment and portfolio optimization</li>
-                <li>NFT-backed liquidity positions</li>
+                <li>Next-generation DEX with 130% capital efficiency</li>
+                <li>Secure token launchpad with anti-scam protection</li>
+                <li>Competitive meme coin battle arena</li>
+                <li>Strategic prediction markets</li>
                 <li>Cross-chain compatibility and seamless asset transfer</li>
               </ul>
+              <p>
+                Built for traders, creators, and risk-takers, D4L delivers a secure and engaging platform where innovation meets opportunity.
+              </p>
             </div>
           </div>
         </section>

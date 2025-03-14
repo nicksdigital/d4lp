@@ -1,107 +1,169 @@
 1. Executive Summary
-Welcome to D4L: Ride the D4L Wave: Risk It, Build It, Bank It
 
-D4L isn’t some boring platform—it’s the beating heart of crypto, cultivating a lifestyle built for those who live for wild bets, the enthusiasts who dream in code, and the investors chasing fat stacks. We’re throwing advanced trading, gamified battles,meme coin madness, prediction markets, social engagement and robust risk management into a comprehensive DeFi blender, creating an ecosystem that’s equal parts adventurous and rock-solid.In a 2025 market where opportunities are ripening and clarity is emerging, D4L’s the spark—delivering a secure DEX with the revolutionary HydraCurve magic, a BonkWars arena for meme coin dominance, and prediction markets to flex your brain while you stack your bags. 
+D4L: The Next Evolution in Decentralized Finance
 
-Our vision? D4L is more than a platform—it’s a movement designed to thrive in any market. We empower traders, token creators, liquidity providers, and governance participants with a secure, innovative, and engaging decentralized ecosystem. Whether you’re chasing moonshots, building the next big meme coin, or seeking strategic opportunities, D4L is your gateway to the future of crypto.
+Core Innovation
+D4L represents a revolutionary advancement in DeFi, powered by the groundbreaking HydraCurve AMM protocol. Our ecosystem delivers unprecedented capital efficiency while maintaining robust security and user engagement.
 
-The “D4L token” is your key to this ecosystem: stake it, vote with it, and unlock exclusive benefits. With a Q2 2025 presale starting off with an innovative Dutch Auction where early participants will gain access to bonuses and an equal chance to shape the platform’s evolution. This is your opportunity to join a community rewriting the rules of meme coin culture—where risk meets reward, and innovation drives success. 
+Key Components
+• HydraCurve DEX: 130% capital efficiency with dynamic pricing
+• Secure Token Launchpad: Anti-scam protection and verification
+• BonkWars Arena: Competitive meme token ecosystem
+• Strategic Prediction Markets: Data-driven betting platform
 
-D4L isn’t just about thriving in the market—it’s about seizing it with relentless drive, igniting unstoppable momentum, and leading the charge to epic victories.
-Welcome to the future of decentralized meme coin culture—where the rogue life isn’t just a vibe, it’s a revolution.
+Technical Excellence
+• Advanced mathematical modeling
+• Quantum-inspired algorithms
+• Cross-chain compatibility
+• Military-grade security
 
- 
-2. Introduction & Market Opportunity
-The 2025 Scene: Meme coins like DOGE, SHIB, and PEPE once ignited the crypto frontier, rallying the crew to chase moonshots with unstoppable energy. By March 2025, the landscape transformed—not slowed, but sharpened. The market’s ripe with potential as savvy traders pivot from fleeting hype to golden opportunities. Scams are fading into the rearview, replaced by a hunger for trust and value—wallets are guarded, yes, but ready to fuel what’s real. DeFi’s charging ahead, blazing trails with secure liquidity and vibrant communities that demand substance over noise. Risk-takers aren’t retreating—they’re hunting bold, groundbreaking projects that spark thrill and deliver staying power. The old game’s evolved, and 2025 is calling for visionary innovators to unleash chaos with purpose, ignite creativity with grit, and forge returns that last.
+2. Platform Architecture
 
+HydraCurve Protocol
+Our proprietary AMM protocol combines advanced mathematical models with real-time market adaptation:
+• Dynamic liquidity optimization
+• Minimal slippage execution
+• Automated price discovery
+• Enhanced capital utilization
 
-The Mess: The current meme coin scene is a chaotic landscape riddled with pitfalls. Lack of security leaves investors vulnerable to rug pulls, while opaque token launches obscure critical details, leaving participants in the dark. Liquidity fragmentation across platforms creates inefficiencies and volatility, and high-risk trading often feels like a gamble with no real edge. Newcomers get burned, enthusiasts see untapped potential, and seasoned investors sense systemic flaws. It’s a culture in desperate need of a reboot—one that preserves the reckless spirit of meme coins but adds the guardrails needed to thrive.
+Security Framework
+• Multi-layer protection systems
+• Real-time threat monitoring
+• Formal verification
+• Emergency circuit breakers
 
+Social Trading Framework
+• Reputation-based trader ranking
+• Performance tracking metrics
+• Success rate calculations
+• Volume-weighted scoring
+• Automated copy trading
 
+Credential System
+• Dynamic reputation scoring (0-1000)
+• Success-based multipliers
+• Volume-based bonuses
+• Achievement tracking
+• Social proof verification
 
-D4L’s Approach: Turning Chaos into Crypto Gold
+3. Market Innovation
 
-Enter D4L—built by trailblazers, for trailblazers, with a twist that hooks everyone. Our meme coin launchpad’s scam-proof, locking in trust for creators and players alike. Our DEX, powered by HydraCurve, keeps trades slick and steady—130% capital efficiency isn’t just talk, it’s more cash in your hand. BonkWars and prediction markets turn the chaos into a game you can win. We’re not just another token—we’re a lifestyle, a system, a crew, a culture. Risk it for the rush, build it for the future, bank it for the win—D4L’s the spark crypto’s been missing in 2025.
+DEX Evolution
+HydraCurve revolutionizes traditional AMM mechanics:
+• Superior capital efficiency (130%)
+• Reduced impermanent loss
+• Optimized price curves
+• Strategic liquidity distribution
 
-3. Platform Overview
-Core Components
-Meme Coin Launchpad
-What: Spin up your own meme coin with D4L’s creator tools—customize it, secure it, launch it. Our verification system sniffs out scams, anti-bot features, plus no rug pulls to ruin the party.
-Next Level: Hit market cap milestones, and your token’s promoted to BonkWars—where the real pioneers shine. It’s a proving ground for hype and hustle.
-Why Join: Creators get a safe shot at greatness; risk takers snag legit tokens to ride. Moonshots with guardrails—pure D4L style.
+Competitive Advantage
+• Advanced mathematical modeling
+• Quantum-inspired algorithms
+• Dynamic market adaptation
+• Institutional-grade execution
 
-DEX: Powered by HydraCurve
-What: Trade cross-chain with low slippage, backed by a 30% D4L liquidity pool that keeps the gears turning. Secure trading with built in liquidity, no more sketchy swaps—D4L’s DEX is built for speed and stability.
-HydraCurve Edge: This is not your grandpa’s AMM. HydraCurve’s a dynamic pricing beast, flexing with market swings to keep capital where it matters—up to 130% more efficient than the old dogs. Slippage? Slashed. Volume? Pumped. Prices? Razor-sharp.
-Why Join: Traders score better deals, enthusiasts geek out on the tech, investors love the steady flow—stack your gains without the stress.
-BonkWars: Meme Battle Arena
-What: Meme coins throw down in the wildest arena crypto’s seen—community strength, market moves, and engagement metrics crown the king. It’s savage Darwinism, raw and real.
-The Prize: Winners climb the ranks, chasing “Ultimate Meme Champion”—bragging rights and clout included.  Accelerate your coins essential exposure, prestige, and community engagement with each victory, alongside additional rewards and bonuses. 
-Why Join: Chaos meets competition—disruptors live for the fight, enthusiasts dig the strategy, investors eye the hype that lasts.
-Prediction Markets
-What: Bet your D4L on BonkWars outcomes—will your fave meme coin crush it or crash? D4L turbocharges Social Trading & Community Engagement. Copycat trading, trader profiles, and achievement systems. It’s speculation with a brain.
-Why Join: High stakes, high rewards—betters love the rush, enthusiasts flex their smarts, investors cash in on the edge. 
-Community & Governance
-What: Decentralized decision-making and token bridging. Stake D4L to earn rewards, vote on the future, unlock VIP drops—power’s in your hands.
-Why Join: Gamblers get perks, enthusiasts shape the tech, investors secure the bag—your crew, your rules.
+4. Token Economics
 
-4. Technical Architecture
-BlockChain: D4L is engineered on Base, an Ethereum Layer-2 scaling solution, harnessing the ERC-20 standard for the $D4L token. This design guarantees broad compatibility with wallets, decentralized applications (dApps), and exchanges. By tapping into Base’s enhancement of Ethereum’s robust infrastructure, D4L delivers exceptional scalability, ironclad security, and a fluid, user-friendly experience.
-The Code: D4L runs on a slick stack of modular smart contracts- (D4LController, SecurityModule, LiquidityModule, SocialModule, InsuranceModule, Prediction MarketModule, MomentumModule, DEX & ENS Modules, and Contract Registry) plus more—each a cog in a machine built for chaos and control. 
-HydraCurve’s the star, a next-gen pricing engine powering the DEX. The HydraCurve is an advanced, dynamic pricing mechanism designed to optimize liquidity utilization in AMMs by continuously adapting to market conditions. Unlike traditional models, it keeps more capital within the active trading range, achieving up to 130% capital efficiency, reducing slippage, and enhancing trading volume. This innovation delivers superior pricing for D4L traders, making it a robust and efficient solution for decentralized finance.
-Security Layers: We’re locked tighter than a degen’s seed phrase—protocol-level with top-tier audits, formal verification, and bug bounties for white hats to catch the sneaky stuff. Transaction-level, we’ve got slippage guards, MEV protection, and front-running defenses to keep trades clean and bots at bay. User-level, multi-sig wallets, time-locks, and emergency shutdowns ensure no single failure point and a safety net if shit hits the fan. Plus, a scalable, modular design lets us upgrade and integrate new features on the fly.
-Scalability: Built for cross-chain integration and continuous feature enhancements, including HydraCurve optimization. Scalability is no buzzword here; the modular design lets us bolt on new features—think AI risk tools or flash loan tricks—without breaking a sweat. D4L’s not just built for 2025; it’s built to evolve as fast as the crypto game does.
+Supply Distribution
+Total Supply: 1 Billion D4L tokens
+• 30% DEX Liquidity Pool
+• 25% Community/Ecosystem
+• 20% Team (vested)
+• 10% Treasury
+• 10% Marketing
+• 5% CEX Liquidity
 
+Utility & Value
+• Trading fee discounts
+• Governance rights
+• Staking rewards
+• Platform access
+• BonkWars participation
 
+Social Trading Incentives
+• Performance-based rewards
+• Follower bonus multipliers
+• Copy trading fee sharing
+• Achievement NFT rewards
+• Reputation staking
 
+5. Launch Strategy
 
+Timeline
+Q2 2025:
+• Whitepaper release
+• DEX launch with HydraCurve
+• BonkWars beta
+• Initial staking activation
 
-5. Tokenomics & Allocation
-D4L Token: 1 Billion total supply—your golden ticket to the D4L arena. It’s the fuel for fees, the stake for rewards, the vote for power, and the key to exclusive drops.
-Breakdown:
-30% DEX Liquidity Pool: Keeps trades flowing smooth—HydraCurve’s lifeline.
-25% Community/Ecosystem: Funds the degen life—rewards, events, and growth juice.
-20% Team: Locked and vested—our devs are in it for the long run.
-10% D4L Treasury: Bankrolls the masterplan—new features, big moves.
-10% Marketing: Spreads the gospel—X hype, meme wars, global takeover.
-5% CEX Liquidity: Preps for the big leagues—centralized action when the time’s right.
-Utility: Pay trading fees to save gas, stake for juicy APYs, vote on what’s next, unlock VIP BonkWars battles—D4L’s your all-in-one pass to risk it, build it, and bank it. It’s not just a token; it’s the pulse of a movement, evolving with every degen dream.
+Q3 2025:
+• Full feature deployment
+• Prediction markets beta
+• Security audits completion
+• Community expansion
 
-6. Pre-Sale Structure & Roadmap
-Pre-Sale (7 Stages)
-Dutch Auction: Whitelist only—lowest price per D4L, lock-up period, and a nice bonus stack to kick things off right.
-Community Sale: Whitelist or KYC crew—sweet entry price, moderate bonuses for the early faithful.
-3-6. Public Rounds: Open to all—price climbs as those in the know pile in, market vibes set the pace.
-Bonus Finale: Last chance for extra D4L heat—special perks for the closers.
-Funds Split: 35% development (coding the road to success), security & audits 20%(bolt down the hatches, trust is king), 20% liquidity (DEX stays liquid), 15% marketing (hype machine), community growth and incentives 10% (best community in the sphere, so keep it growing).
+Q4 2025:
+• Mainnet optimization
+• Cross-chain integration
+• Partnership expansion
+• Governance activation
 
-Use of Funds
-The pre-sale proceeds for D4L are a critical resource to establish a robust, secure, and scalable ecosystem that delivers long-term value to our community and holders. We are committed to transparency and efficiency in allocating these funds to ensure the successful execution of our vision. Below is a detailed breakdown of how the proceeds will be utilized:
-Development (35%):
-The largest portion of funds will be allocated to building and enhancing the D4L platform. This includes smart contract development, user interface design, backend infrastructure, and integration of modular features for scalability and future upgrades. Our team of experienced developers will prioritize performance, usability, and adaptability to meet the evolving needs of our users.
-Security & Audits (20%):
-Security is the cornerstone of D4L’s trust model. Proceeds will fund comprehensive protocol-level audits conducted by top-tier firms, formal verification processes to eliminate vulnerabilities, and ongoing bug bounty programs to incentivize white-hat hackers. These measures ensure our system remains resilient against exploits and maintains user confidence.
-Liquidity Provision (20%):
-To facilitate seamless trading and adoption, a dedicated allocation will bolster liquidity pools on decentralized exchanges. This will minimize slippage, enhance transaction efficiency, and provide a stable trading environment for D4L token holders from day one, supporting both initial and long-term market participation.
-Marketing 15%):
-Effective outreach is essential to drive awareness and adoption. Funds will support strategic marketing campaigns, including digital advertising, partnerships with influencers and thought leaders, and participation in industry events. These efforts will position D4L as a leading solution in the decentralized ecosystem and attract a diverse user base.
-Community Growth and Incentives (10%):
-A thriving community is the heartbeat of D4L. This allocation will fund initiatives such as governance programs, staking rewards, airdrops, and educational resources to empower users and foster engagement. By rewarding early adopters and active participants, we aim to cultivate a loyal and vibrant ecosystem.
-This allocation reflects our commitment to balancing technical excellence, market readiness, and community empowerment. Regular updates on fund utilization will be shared with our community to maintain accountability and trust.
+6. Technical Infrastructure
 
-Roadmap
-The D4L roadmap outlines our strategic path to deliver a fully operational, secure, and scalable platform while continuously integrating innovative features. Each phase is designed to build on the previous, ensuring steady progress toward our long-term vision of redefining decentralized solutions. Below is our planned timeline:
-Q2 2025: The D4L whitepaper drops, unveiling our vision to the world as pre-sale funds ignite the mission. The DEX launches with HydraCurve pumping—trades hit the ground running—while BonkWars beta rolls out, pitting curated meme coins in a community-voted battle for dominance. The core dev team assembles, partnering with top audit firms to kick off base protocol development, focusing on smart contracts and multi-sig wallets. Staking fires up for early believers, fueled by pre-sale momentum.
-Q3 2025: Core trading, token, and liquidity features launch as prediction markets beta rolls out—bet your D4L on BonkWars winners and test your gut. Initial protocol audits and formal verification wrap up, while a bug bounty program stress-tests the system. The testnet deploys for community feedback, deepening liquidity pools and finalizing slippage guards, MEV protection, and emergency shutdowns. Community events like meme-offs keep the vibe electric.
-Q4 2025: The D4L mainnet launches, syncing the full ecosystem—Launchpad, DEX, BonkWars, and prediction markets—loaded with multi-sig wallets, time-locks, and transaction-level protections. Liquidity pools hit major DEXes, while the first marketing wave drives onboarding and token adoption. Community scales up with governance votes—your D4L shapes the rules—plus initial staking rewards and incentives roll out. Partnerships with DEX giants tease bigger clout on the horizon.
-Q1 2026: If the market’s hot, CEX listings drop—D4L goes mainstream. Strategic tie-ups lock in—think meme crews or tech wizards. Otherwise, we double down on organic growth—more rewards, tighter crew, bigger chaos.
-This roadmap is a living framework, subject to refinement as we incorporate community input and adapt to technological advancements. Our phased approach ensures that D4L delivers immediate value while laying the groundwork for sustained innovation and resilience.
+HydraCurve Implementation
+• Advanced pricing algorithms
+• Dynamic liquidity management
+• Cross-chain compatibility
+• Real-time market adaptation
 
-7. User Journey
-Step 1: Link your wallet—MetaMask, Phantom, whatever’s your favorite Base . Set up a profile, skip KYC if you’re a true degen, and dive into the D4L dashboard—your launchpad to the chaos.
-Step 2: Launch a meme coin—tweak the name, supply, and vibe as you configure token parameters. Lock liquidity and activate built-in security controls with our tools, pass the scam check, and blast it to the crew—X posts and Discord hype included—while engaging the community every step of the way.
-Step 3: Trade on the DEX—HydraCurve keeps it smooth, starting with basic trading limits. Progress to advanced social trading and copy trading as you build reputation and unlock premium features. Jump into BonkWars—back your token or flex on rivals—then bet D4L in prediction markets, guess the champ, and stack the wins.
-Step 4: Stake your D4L—earn APYs, vote on wild proposals (more battles? New chains?), and unlock VIP drops like rare NFTs or BonkWars boosts. Stake tokens for rewards, purchase insurance coverage to manage risk, and dive deeper into prediction markets. It’s your game now.
+Security Measures
+• Multi-signature protocols
+• Automated monitoring
+• Emergency responses
+• Regular audits
+
+Social Metrics Engine
+• Real-time performance tracking
+• Success rate calculations:
+  - Trade win/loss ratio
+  - Volume weighted scoring
+  - Risk-adjusted returns
+• Reputation score formula:
+  MIN_SCORE + (successRate * MULTIPLIER) + volumeBonus
+
+Trader Credentials
+• On-chain verification
+• Performance history
+• Trading volume metrics
+• Community engagement score
+• Achievement badges
+
+7. User Experience
+
+Trading Interface
+• Intuitive design
+• Advanced order types
+• Real-time analytics
+• Social trading features
+
+Platform Access
+• Multi-wallet support
+• Cross-chain compatibility
+• Mobile optimization
+• API integration
+
+Social Trading Features
+• Trader leaderboards
+• Performance analytics
+• Copy trading dashboard
+• Risk management tools
+• Social proof verification
+
+Reputation Building
+• Trading achievements
+• Volume milestones
+• Community contributions
+• Strategy sharing
+• Follower growth
 
 8. Risk Management & Security
 Risk Management Modules
@@ -119,13 +181,63 @@ For Token Creators: Launch tokens effortlessly with built-in security and liquid
 For Liquidity Providers: Earn competitive yields with automated management and robust risk protection. The DEX pool, powered by HydraCurve, maxes your cut with juicy returns—chill knowing insurance pools have your back if shit hits the fan, keeping your funds safe and thriving.
 For the Community & Governance: D4L is decentralized, transparent, and community-driven, aligning incentives across all trailblazers. BonkWars feeds your soul with chaos and code, prediction markets test your balls with cash on the line, and governance lets you rule. It’s your life, your hustle, your win—shaping D4L’s future with every vote.
 
+For Copy Traders
+• Performance analytics
+• Risk management tools
+• Automated position copying
+• Reputation verification
+• Multiple strategy support
+
+Reputation Tiers
+Bronze (0-200):
+• Basic trading features
+• Standard fee structure
+
+Silver (201-400):
+• Reduced trading fees
+• Copy trading eligibility
+
+Gold (401-700):
+• Premium features access
+• Higher copy trading limits
+• Achievement NFT eligibility
+
+Diamond (701-1000):
+• Maximum fee reductions
+• Unlimited copy trading
+• Exclusive NFT rewards
+• Governance weight multiplier
+
 
 10. Team & Partnerships
-Team: We’re anonymous devs—vetted by directors, no cap. Coding vets with blockchain scars, smart contract wizards, and AI tinkerers, we’ve built D4L from the shadows to dodge the suits and keep it real. Passion’s our cred—results are our flex.
 
-Raymond- D4Ler is a battle-hardened business OG who’s crushed it in the brick-and-mortar game—importing, wholesaling, and executing like a boss. A .com era veteran, they pioneered groundbreaking tech, riding waves of disruption with precision. With a sharp eye for international finance, mergers and acquisitions, and taking companies public, D4ler blends development, marketing, and financial expertise into a predictive powerhouse skill set. Known for executing under pressure, they’re a natural fit for the cutting-edge crypto scene—not only predicting trends but creating them, ready to capitalize on what’s next.
+Core Team
+• Anonymous development team
+• Verified blockchain expertise
+• Smart contract specialists
+• AI integration experts
 
-Partners: We’re chasing DEX titans—think Uniswap, PancakeSwap vibes—to maximize liquidity. Meme crews and Discord lords are next—raw community heat to amplify the chaos. Strategic tie-ups drop as we scale—watch X for the drip.
+Leadership
+
+Nick
+• Creator of HydraCurve AMM protocol
+• Quantum computing & financial mathematics specialist
+• Advanced market making algorithm designer
+• DeFi protocol architect
+• Expert in mathematical modeling for financial systems
+• Leading technical innovation and protocol development
+
+Raymond (D4Ler)
+• Veteran business strategist
+• Tech innovation expert
+• M&A specialist
+• International finance background
+
+Strategic Partnerships
+• Major DEX collaborations
+• Community alliance network
+• Technical integrations
+• Marketing partnerships
 
 
 11. Strategic Approach (2025 Vibes)
@@ -141,4 +253,139 @@ Community Heat: 25% tokens pump rewards—staking APYs, BonkWars perks, governan
 12. Activation Step
 The D4L Dream: We’re the pulse for the devoted who risk it all, the code for builders shaping tomorrow, the cash for stackers tolling up wins. HydraCurve, BonkWars, and prediction markets will turn 2025 and beyond into our playground—chaos with a purpose, tech with a soul, profits with a punch. Pre-sale’s your shot—Q2 2025, grab D4L cheap, lock in bonuses, and join a crew that’s rewriting crypto’s rules. Trailblazers, bring your fire; enthusiasts, bring your brains; investors, bring your bags—D4L’s where moonshots meet masterplans. Hit [website] or slide into our X DMs—don’t sleep on the empire we’re building. Let’s roll.
 
+Technical Implementation Details
+
+Social Trading Architecture
+
+Core Components
+• Reputation System
+  - Real-time scoring engine
+  - Achievement tracking
+  - Performance metrics
+  - Social proof verification
+  - Tier management
+
+• Copy Trading System
+  - Position mirroring
+  - Risk management
+  - Fee distribution
+  - Strategy management
+  - Performance tracking
+
+• Social Features
+  - Trader profiles
+  - Leaderboards
+  - Achievement showcase
+  - Strategy marketplace
+  - Community engagement metrics
+
+System Integration
+
+1. Platform Components
+• HydraCurve DEX Integration
+  - Reputation-based fee tiers
+  - Priority execution rights
+  - Enhanced liquidity access
+  - Special order types
+
+• BonkWars Integration
+  - Reputation multipliers
+  - Special entry rights
+  - Enhanced rewards
+  - Competition features
+
+• Prediction Markets
+  - Expert status benefits
+  - Special betting limits
+  - Enhanced payouts
+  - Reputation-weighted odds
+
+2. Data Systems
+• Performance Analytics
+  - Real-time tracking
+  - Historical analysis
+  - Risk metrics
+  - Success rate calculation
+
+• Achievement System
+  - Milestone tracking
+  - Badge distribution
+  - Special event rewards
+  - Community recognition
+
+Security Framework
+
+1. Risk Management
+• Position Controls
+  - Size limits
+  - Exposure caps
+  - Stop-loss mechanisms
+  - Slippage protection
+
+• System Safeguards
+  - Rate limiting
+  - Validation checks
+  - Emergency controls
+  - Circuit breakers
+
+2. Reputation Protection
+• Anti-Gaming Measures
+  - Performance verification
+  - Volume validation
+  - Activity monitoring
+  - Sybil resistance
+
+Implementation Phases
+
+Phase 1: Foundation
+• Basic reputation tracking
+• Achievement system
+• Performance analytics
+• Core social features
+
+Phase 2: Advanced Features
+• Copy trading system
+• Enhanced risk management
+• Strategy marketplace
+• Advanced analytics
+
+Phase 3: Full Integration
+• Cross-platform features
+• Advanced governance
+• Enhanced rewards
+• System optimization
+
+Benefits Structure
+
+1. Trader Benefits
+• Fee Reductions
+  Bronze: Standard rates
+  Silver: 10% reduction
+  Gold: 25% reduction
+  Diamond: 40% reduction
+
+• Copy Trading Revenue
+  Silver: 70% share
+  Gold: 80% share
+  Diamond: 90% share
+
+2. Platform Access
+• Copy Trading Limits
+  Bronze: Basic access
+  Silver: Standard features
+  Gold: Advanced features
+  Diamond: Premium access
+
+3. Governance Rights
+• Voting Weight
+  Bronze: 1x
+  Silver: 1.5x
+  Gold: 2x
+  Diamond: 3x
+
+• Special Rights
+  Gold & Diamond: Proposal submission
+  Diamond: Priority voting
+
+Note: Detailed technical specifications, smart contract architecture, and implementation details are available in the Technical Documentation.
 
