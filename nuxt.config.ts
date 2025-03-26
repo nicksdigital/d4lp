@@ -69,7 +69,9 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      apiBase: process.env.API_BASE || 'http://0.0.0.0:3000/api'
+      apiBase: process.env.API_BASE || 'http://0.0.0.0:3000/api',
+      userProfileAddress: process.env.USER_PROFILE_ADDRESS,
+      // Add other contract addresses as needed
     }
   },
   // Add more specific configuration for development server
